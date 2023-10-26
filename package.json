@@ -1,0 +1,19 @@
+{
+  "name": "seo-checker",
+  "version": "1.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {},
+  "keywords": [
+    "electron",
+    "puppeteer",
+    "seo",
+    "lighthouse"
+  ],
+  "author": "Lariw",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^27.0.2",
+    "puppeteer": "^21.4.1"
+  }
+}

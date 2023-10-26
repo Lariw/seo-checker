@@ -1,0 +1,1 @@
+const electron = requie('electron');
