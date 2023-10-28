@@ -25,3 +25,7 @@
 .navigationBar__button:active {
   background-color: #fafafa;
 }
+
+.navigationBar__icons {
+  font-size: 10px;
+}
