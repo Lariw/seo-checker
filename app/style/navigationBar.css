@@ -1,0 +1,27 @@
+.navigationBar {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #484949;
+  -webkit-app-region: drag;
+}
+
+.navigationBar__button {
+  margin: 5px;
+  padding: 5px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #c6c7c7;
+  -webkit-app-region: no-drag;
+}
+
+.navigationBar__button:hover {
+  background-color: #e0e1e1;
+}
+
+.navigationBar__button:active {
+  background-color: #fafafa;
+}

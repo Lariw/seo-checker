@@ -4,8 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seo-checker</title>
+
+    <link rel="stylesheet" href="./style/navigationBar.css" />
+    <link rel="stylesheet" href="./style/main.css" />
+
+    <script
+      src="https://kit.fontawesome.com/992def5dc8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="./script/navigationBarButtons.js"></script>
   </head>
   <body>
-    <h1>Seo-checker</h1>
+    <div class="navigationBar">
+      <button class="navigationBar__button js-minimizeButton">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+
+      <button class="navigationBar__button js-maximizeButton">
+        <i class="fa-regular fa-window-maximize"></i>
+      </button>
+
+      <button class="navigationBar__button js-exitButton">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
   </body>
 </html>
