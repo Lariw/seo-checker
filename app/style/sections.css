@@ -1,6 +1,5 @@
 .sections {
   width: 100%;
-  height: 90px;
 }
 
 .section_container {
@@ -14,16 +13,28 @@
 .sections_button {
   width: 100%;
   height: 50px;
+  color: #ccc;
   border: none;
+  background-color: #262626;
   cursor: pointer;
 }
 
 .sections_button:hover {
-  color: rgb(0, 98, 159);
+  color: #34adf8;
 }
 
 .sections__buttonText {
   display: block;
-  margin: 3px;
+  margin: 6px;
   font-size: 15px;
+  margin-top: 5px;
+}
+
+.sections__buttonIcon {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.sections__currentSection {
+  color: #34adf8;
 }

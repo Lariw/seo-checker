@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background-color: rgb(231, 236, 236);
+}
+
+.js-section-1 {
+  display: block;
+}
+.js-section-2 {
+  display: none;
+}
+.js-section-3 {
+  display: none;
+}
+.js-section-4 {
+  display: none;
+}

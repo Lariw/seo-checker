@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background-color: #484949;
+  background-color: #262626;
   -webkit-app-region: drag;
 }
 
@@ -27,5 +27,5 @@
 }
 
 .navigationBar__icons {
-  font-size: 10px;
+  font-size: 9px;
 }

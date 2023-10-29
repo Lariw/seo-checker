@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="./style/navigationBar.css" />
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/sections.css" />
+    <link rel="stylesheet" href="./style/sectionBlock.css" />
 
     <script
       src="https://kit.fontawesome.com/992def5dc8.js"
       crossorigin="anonymous"
     ></script>
-
+    <script defer src="./script/changeSectionButtons.js"></script>
     <script defer src="./script/navigationBarButtons.js"></script>
   </head>
   <body>
@@ -34,22 +35,39 @@
     <div class="mainContainer">
       <div class="sections">
         <div class="section_container">
-          <button class="sections_button">
+          <button class="sections_button js-lighthouseSectionButton">
             <i class="fa-solid sections__buttonIcon fa-bolt"></i
             ><span class="sections__buttonText">Lighthouse</span>
           </button>
-          <button class="sections_button">
+          <button class="sections_button js-fireSectionButton">
             <i class="fa-solid sections__buttonIcon fa-fire"></i
             ><span class="sections__buttonText">Fire</span>
           </button>
-          <button class="sections_button">
+          <button
+            class="sections_button js-spiderSectionButton sections__currentSection"
+          >
             <i class="fa-solid sections__buttonIcon fa-spider"></i
             ><span class="sections__buttonText">Spider</span>
           </button>
-          <button class="sections_button">
+          <button class="sections_button js-settingsSectionButton">
             <i class="fa-solid sections__buttonIcon fa-gear"></i
             ><span class="sections__buttonText">Settings</span>
           </button>
+        </div>
+      </div>
+
+      <div class="section_block">
+        <div class="section section--1 js-section-1">
+          <h2 class="section__heading">Lighthouse</h2>
+        </div>
+        <div class="section section--2 js-section-2">
+          <h2 class="section__heading">Fire</h2>
+        </div>
+        <div class="section section--3 js-section-3">
+          <h2 class="section__heading">Spider</h2>
+        </div>
+        <div class="section section--4 js-section-4">
+          <h2 class="section__heading">Settings</h2>
         </div>
       </div>
     </div>
