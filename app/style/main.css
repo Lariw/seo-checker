@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  font-family: "Pixelify Sans", sans-serif;
+  color: #fff;
 }
 
 *,

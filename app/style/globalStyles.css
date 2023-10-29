@@ -37,6 +37,10 @@
   background-color: #2196f3;
 }
 
+.checkboxContainer--bottom {
+  margin-top: 40px;
+}
+
 .checkmark:after {
   content: "";
   position: absolute;
@@ -70,7 +74,7 @@
 .inputContainer input {
   border: none;
   width: 200px;
-  padding: 10px;
+  padding: 5px;
   margin: 15px;
   border-radius: 5px;
 }
@@ -101,4 +105,9 @@
   resize: vertical;
   border: none;
   border-radius: 10px;
+}
+
+.textarea_text {
+  display: block;
+  margin-bottom: 15px;
 }

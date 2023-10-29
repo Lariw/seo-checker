@@ -3,9 +3,10 @@ const path = require("node:path");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
+    width: 1000,
     frame: false,
-    height: 600,
+    icon: "icon\\icon.ico",
+    height: 700,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,

@@ -3,23 +3,44 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background-color: #262626;
+  background-color: #0d1821;
   -webkit-app-region: drag;
 }
 
 .navigationBar__button {
-  margin: 5px;
+  margin: 2px;
   padding: 5px;
   width: 30px;
-  border-radius: 50%;
   border: none;
+  border-radius: 5px;
+  color: #fff;
   cursor: pointer;
-  background-color: #c6c7c7;
+  background-color: #ededed00;
   -webkit-app-region: no-drag;
 }
 
-.navigationBar__button:hover {
-  background-color: #e0e1e1;
+.navigationBar__button:nth-child(1):hover {
+  background-color: #c0c02a;
+}
+
+.navigationBar__button:nth-child(2):hover {
+  background-color: #2d8b29;
+}
+
+.navigationBar__button:nth-child(3):hover {
+  background-color: #ff0000;
+}
+
+.navigationBar__button:nth-child(1):active {
+  background-color: #cccc38;
+}
+
+.navigationBar__button:nth-child(2):active {
+  background-color: #39b135;
+}
+
+.navigationBar__button:nth-child(3):active {
+  background-color: #ff4d4d;
 }
 
 .navigationBar__button:active {
@@ -27,5 +48,5 @@
 }
 
 .navigationBar__icons {
-  font-size: 9px;
+  font-size: 13px;
 }

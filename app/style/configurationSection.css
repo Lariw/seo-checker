@@ -2,3 +2,7 @@
   display: flex;
   justify-content: space-around;
 }
+
+.configurationSection__radioContainer {
+  margin-top: 50px;
+}

@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 15px;
-  background-color: rgb(231, 236, 236);
+  background-color: #344966;
+  height: 596px;
 }
 
 .section__heading {

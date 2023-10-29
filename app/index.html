@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="./style/globalStyles.css" />
     <link rel="stylesheet" href="./style/lighthouse.css" />
     <link rel="stylesheet" href="./style/spider.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/992def5dc8.js"
       crossorigin="anonymous"
@@ -56,6 +62,19 @@
             <i class="fa-solid sections__buttonIcon fa-gear"></i
             ><span class="sections__buttonText">Settings</span>
           </button>
+        </div>
+
+        <div class="loaderContainer">
+          <div class="section__loadingBar">
+            <div class="section__loader">100%</div>
+          </div>
+          <div class="section__loadingBar">
+            <div class="section__loader">100%</div>
+          </div>
+          <div class="section__loadingBar">
+            <div class="section__loader">100%</div>
+          </div>
+          <div class="section__loadingBar--configuration"></div>
         </div>
       </div>
 
@@ -172,28 +191,38 @@
               ></label>
 
               <!-- if auth checkbox = true -->
-              <label class="checkboxContainer checkboxContainer--radio"
-                >Window Auth<input type="radio" name="authButton" /><span
-                  class="checkmark checkmark--radio"
-                ></span
-              ></label>
-              <label class="checkboxContainer checkboxContainer--radio"
-                >Cookies headers<input type="radio" name="authButton" /><span
-                  class="checkmark checkmark--radio"
-                ></span
-              ></label>
+
+              <div class="configurationSection__radioContainer">
+                <fieldset>
+                  <legend>Autorization</legend>
+
+                  <label
+                    class="checkboxContainer checkboxContainer--radio checkboxContainer--bottom"
+                    >Window Auth<input type="radio" name="authButton" /><span
+                      class="checkmark checkmark--radio"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer checkboxContainer--radio"
+                    >Cookies headers<input
+                      type="radio"
+                      name="authButton" /><span
+                      class="checkmark checkmark--radio"
+                    ></span
+                  ></label>
+                </fieldset>
+              </div>
 
               <!-- if auth checkbox = true -->
             </div>
             <div>
-              <label
-                >List of URL's
+              <label class="textareaLabel"
+                ><span class="textarea_text">List of URL's</span>
                 <textarea
                   class="textarea"
                   name=""
                   id=""
                   cols="35"
-                  rows="10"
+                  rows="15"
                 ></textarea>
               </label>
             </div>
