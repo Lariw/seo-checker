@@ -5,6 +5,11 @@
   background-color: rgb(231, 236, 236);
 }
 
+.section__heading {
+  text-align: center;
+  letter-spacing: 0.34em;
+}
+
 .js-section-1 {
   display: block;
 }

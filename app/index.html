@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/sections.css" />
     <link rel="stylesheet" href="./style/sectionBlock.css" />
-
+    <link rel="stylesheet" href="./style/configurationSection.css" />
+    <link rel="stylesheet" href="./style/globalStyles.css" />
+    <link rel="stylesheet" href="./style/lighthouse.css" />
+    <link rel="stylesheet" href="./style/spider.css" />
     <script
       src="https://kit.fontawesome.com/992def5dc8.js"
       crossorigin="anonymous"
@@ -35,7 +38,9 @@
     <div class="mainContainer">
       <div class="sections">
         <div class="section_container">
-          <button class="sections_button js-lighthouseSectionButton">
+          <button
+            class="sections_button js-lighthouseSectionButton sections__currentSection"
+          >
             <i class="fa-solid sections__buttonIcon fa-bolt"></i
             ><span class="sections__buttonText">Lighthouse</span>
           </button>
@@ -43,9 +48,7 @@
             <i class="fa-solid sections__buttonIcon fa-fire"></i
             ><span class="sections__buttonText">Fire</span>
           </button>
-          <button
-            class="sections_button js-spiderSectionButton sections__currentSection"
-          >
+          <button class="sections_button js-spiderSectionButton">
             <i class="fa-solid sections__buttonIcon fa-spider"></i
             ><span class="sections__buttonText">Spider</span>
           </button>
@@ -59,15 +62,142 @@
       <div class="section_block">
         <div class="section section--1 js-section-1">
           <h2 class="section__heading">Lighthouse</h2>
+
+          <div class="lighthouseContainer">
+            <div>
+              <label class="inputContainer"
+                >Test name:<input type="text"
+              /></label>
+
+              <label class="checkboxContainer"
+                >HTML<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >CSV<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+            </div>
+
+            <div>
+              <label class="checkboxContainer"
+                >SEO<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Performance<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Accessbility<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Best Practices<input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >PWA<input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+            </div>
+          </div>
+
+          <button class="startTestingButton">Start testing</button>
         </div>
         <div class="section section--2 js-section-2">
           <h2 class="section__heading">Fire</h2>
         </div>
         <div class="section section--3 js-section-3">
           <h2 class="section__heading">Spider</h2>
+
+          <div class="spiderContainer">
+            <div>
+              <label class="inputContainer"
+                >Test name:<input type="text"
+              /></label>
+            </div>
+
+            <div>
+              <label class="checkboxContainer"
+                >Fonts <input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Links <input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Images <input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Meta:tags <input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Console logs <input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+            </div>
+          </div>
+          <button class="startTestingButton">Start testing</button>
         </div>
         <div class="section section--4 js-section-4">
           <h2 class="section__heading">Settings</h2>
+
+          <div class="configrationSection">
+            <div>
+              <label class="checkboxContainer"
+                >Headless<input type="checkbox" checked name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >Auth<input type="checkbox" name="" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+
+              <!-- if auth checkbox = true -->
+              <label class="checkboxContainer checkboxContainer--radio"
+                >Window Auth<input type="radio" name="authButton" /><span
+                  class="checkmark checkmark--radio"
+                ></span
+              ></label>
+              <label class="checkboxContainer checkboxContainer--radio"
+                >Cookies headers<input type="radio" name="authButton" /><span
+                  class="checkmark checkmark--radio"
+                ></span
+              ></label>
+
+              <!-- if auth checkbox = true -->
+            </div>
+            <div>
+              <label
+                >List of URL's
+                <textarea
+                  class="textarea"
+                  name=""
+                  id=""
+                  cols="35"
+                  rows="10"
+                ></textarea>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
