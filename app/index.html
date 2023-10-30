@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/globalStyles.css" />
     <link rel="stylesheet" href="./style/lighthouse.css" />
     <link rel="stylesheet" href="./style/spider.css" />
+    <link rel="stylesheet" href="./style/toggleWindow.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,6 +27,7 @@
     ></script>
     <script defer src="./script/changeSectionButtons.js"></script>
     <script defer src="./script/navigationBarButtons.js"></script>
+    <script defer src="./script/expandableWindow.js"></script>
   </head>
   <body>
     <div class="navigationBar">
@@ -147,12 +149,12 @@
 
             <div>
               <label class="checkboxContainer"
-                >Fonts <input type="checkbox" name="" /><span
+                >Fonts <input checked type="checkbox" name="" /><span
                   class="checkmark"
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Links <input type="checkbox" name="" /><span
+                >Links <input checked type="checkbox" name="" /><span
                   class="checkmark"
                 ></span
               ></label>
@@ -167,7 +169,7 @@
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Console logs <input type="checkbox" name="" /><span
+                >Console logs <input checked type="checkbox" name="" /><span
                   class="checkmark"
                 ></span
               ></label>
@@ -239,18 +241,22 @@
             <div>
               <label class="textareaLabel"
                 ><span class="textarea_text">List of URL's</span>
-                <textarea
-                  class="textarea"
-                  name=""
-                  id=""
-                  cols="35"
-                  rows="15"
-                ></textarea>
+                <textarea class="textarea" cols="35" rows="15"></textarea>
               </label>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="expandable-windowHidden js-expandable-window">
+
+        <div class="expandable__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt illo accusamus expedita hic provident, impedit nostrum distinctio ipsa cupiditate facere perferendis aliquam a unde. Earum tenetur enim odio eveniet animi.</div>
+
+
+      </div>
+      <button class="close-buttonArrowHidden js-showConsole">
+        <i class="fa-solid fa-angles-right js-changeArrow"></i>
+      </button>
     </div>
   </body>
 </html>

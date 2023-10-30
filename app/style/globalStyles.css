@@ -37,10 +37,6 @@
   background-color: #2196f3;
 }
 
-/* .checkboxContainer--bottom {
-  margin-bottom: 70px;
-} */
-
 .checkmark:after {
   content: "";
   position: absolute;
@@ -87,7 +83,12 @@
   background-color: #2196f3;
   padding: 12px;
   border-radius: 5px;
-  margin: 25px auto;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 50px auto;
   cursor: pointer;
 }
 

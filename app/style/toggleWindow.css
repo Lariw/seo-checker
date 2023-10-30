@@ -1,0 +1,48 @@
+.expandable-windowHidden {
+  position: absolute;
+  background-color: #fff;
+  width: 200px;
+  height: 500px;
+  border-radius: 5px;
+  top: 120px;
+  left: -200px;
+}
+
+.close-buttonArrowHidden {
+  background-color: #ffffff00;
+  border: none;
+  position: absolute;
+  top: 320px;
+  color: #fff;
+  cursor: pointer;
+  left: 0px;
+}
+
+.expandable-windowDisplay {
+  position: absolute;
+  background-color: #fff;
+  width: 200px;
+  height: 500px;
+  border-radius: 5px;
+  top: 120px;
+}
+
+.close-buttonArrowDisplay {
+  background-color: #ffffff00;
+  border: none;
+  position: absolute;
+  top: 320px;
+  color: #fff;
+  cursor: pointer;
+  left: 195px;
+}
+.fa-angles-left {
+  font-size: 15px;
+}
+
+.expandable__content {
+  padding: 5px;
+  font-family: "Consolas", Courier, monospace;
+  color: #000;
+  font-size: 13px;
+}
