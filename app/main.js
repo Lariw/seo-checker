@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
-const path = require("node:path");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -8,7 +7,6 @@ function createWindow() {
     icon: "icon\\icon.ico",
     height: 700,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
       contextIsolation: false,
     },

@@ -108,6 +108,10 @@
   border-radius: 10px;
 }
 
+.inputContainer--hidden {
+  display: none;
+}
+
 .textarea_text {
   display: block;
   margin-bottom: 15px;

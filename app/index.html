@@ -28,6 +28,9 @@
     <script defer src="./script/changeSectionButtons.js"></script>
     <script defer src="./script/navigationBarButtons.js"></script>
     <script defer src="./script/expandableWindow.js"></script>
+    <script defer src="./script/authorizationWindow/authorizationWindow.js"></script>
+    <script defer src="./script/globalSettings.js"></script>
+
   </head>
   <body>
     <div class="navigationBar">
@@ -206,7 +209,7 @@
 
               <div class="configurationSection__radioContainer">
                 <fieldset>
-                  <legend>Autorization</legend>
+                  <legend>Authorization</legend>
 
                   <label class="checkboxContainer checkboxContainer--radio"
                     >Window Auth<input
@@ -230,11 +233,19 @@
                     cols="40"
                     rows="10"
                   ></textarea>
+
+                  <label class="inputContainer inputContainer--hidden"
+                >URI<input
+                  class="URI__input js-authURI"
+                  type="text"
+              /></label>
+
                   <button
                     class="configurationSection_autorizationButton js-authorizationButton"
                   >
                     Authorize me!
                   </button>
+
                 </fieldset>
               </div>
             </div>
