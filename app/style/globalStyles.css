@@ -37,9 +37,9 @@
   background-color: #2196f3;
 }
 
-.checkboxContainer--bottom {
-  margin-top: 40px;
-}
+/* .checkboxContainer--bottom {
+  margin-bottom: 70px;
+} */
 
 .checkmark:after {
   content: "";
@@ -110,4 +110,12 @@
 .textarea_text {
   display: block;
   margin-bottom: 15px;
+}
+
+.textarea--headers {
+  margin: 0 auto;
+  resize: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
 }

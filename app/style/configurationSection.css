@@ -4,5 +4,40 @@
 }
 
 .configurationSection__radioContainer {
+  display: none;
   margin-top: 50px;
+}
+
+.configurationSection_autorizationButton {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  font-size: 15px;
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: hsl(240, 76%, 46%);
+  color: #fff;
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.configurationSection_autorizationButton:hover {
+  background-color: hsl(240, 76%, 50%);
+}
+
+.configurationSection_autorizationButton:active {
+  background-color: hsl(240, 76%, 53%);
+}
+
+.js-authorizationButton {
+  display: none;
+}
+
+.js-showCookieContainer {
+  display: none;
+}
+
+.delay__input {
+  max-width: 100px;
 }

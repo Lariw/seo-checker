@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./script/configurationSection.js"></script>
     <script
       src="https://kit.fontawesome.com/992def5dc8.js"
       crossorigin="anonymous"
@@ -185,34 +186,55 @@
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Auth<input type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
+                >Auth<input
+                  class="js-authCheckbox"
+                  type="checkbox"
+                  name="" /><span class="checkmark"></span
               ></label>
 
-              <!-- if auth checkbox = true -->
+              <label class="inputContainer"
+                >Delay<input
+                  step="1000"
+                  min="2000"
+                  max="25000"
+                  value="5000"
+                  class="delay__input js-delayInput"
+                  type="number"
+              /></label>
 
               <div class="configurationSection__radioContainer">
                 <fieldset>
                   <legend>Autorization</legend>
 
-                  <label
-                    class="checkboxContainer checkboxContainer--radio checkboxContainer--bottom"
-                    >Window Auth<input type="radio" name="authButton" /><span
-                      class="checkmark checkmark--radio"
-                    ></span
-                  ></label>
                   <label class="checkboxContainer checkboxContainer--radio"
-                    >Cookies headers<input
+                    >Window Auth<input
+                      class="js-windowsAuthRadio"
                       type="radio"
                       name="authButton" /><span
                       class="checkmark checkmark--radio"
                     ></span
                   ></label>
+                  <label class="checkboxContainer checkboxContainer--radio"
+                    >Cookies headers<input
+                      class="js-cookieAuthRadio"
+                      type="radio"
+                      name="authButton" /><span
+                      class="checkmark checkmark--radio"
+                    ></span
+                  ></label>
+
+                  <textarea
+                    class="textarea textarea--headers js-showCookieContainer"
+                    cols="40"
+                    rows="10"
+                  ></textarea>
+                  <button
+                    class="configurationSection_autorizationButton js-authorizationButton"
+                  >
+                    Authorize me!
+                  </button>
                 </fieldset>
               </div>
-
-              <!-- if auth checkbox = true -->
             </div>
             <div>
               <label class="textareaLabel"
