@@ -1,19 +1,21 @@
-const { ipcRenderer } = require("electron");
+(() => {
+  const { ipcRenderer } = require("electron");
 
-const ipc = ipcRenderer;
+  const ipc = ipcRenderer;
 
-const exitButton = document.querySelector(".js-exitButton");
-const minimizeButton = document.querySelector(".js-minimizeButton");
-const maximizeButton = document.querySelector(".js-maximizeButton");
+  const exitButton = document.querySelector(".js-exitButton");
+  const minimizeButton = document.querySelector(".js-minimizeButton");
+  const maximizeButton = document.querySelector(".js-maximizeButton");
 
-exitButton.addEventListener("click", () => {
-  ipc.send("closeApp");
-});
+  exitButton.addEventListener("click", () => {
+    ipc.send("closeApp");
+  });
 
-minimizeButton.addEventListener("click", () => {
-  ipc.send("minimizeApp");
-});
+  minimizeButton.addEventListener("click", () => {
+    ipc.send("minimizeApp");
+  });
 
-maximizeButton.addEventListener("click", () => {
-  ipc.send("maximizeRestoreApp");
-});
+  maximizeButton.addEventListener("click", () => {
+    ipc.send("maximizeRestoreApp");
+  });
+})();

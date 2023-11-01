@@ -9,13 +9,7 @@ const getAuthorization = async () => {
   try {
     const browser = await puppeteer.launch({
       headless: false,
-      executablePath: path.join(
-        __dirname,
-        "browsers",
-        "chrome-win",
-        "chrome.exe"
-      ),
-      args: ["--disable-web-security"],
+      executablePath: pathChromeBrowser,
     });
     const page = await browser.newPage();
 

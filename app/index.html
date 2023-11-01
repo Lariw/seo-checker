@@ -28,9 +28,12 @@
     <script defer src="./script/changeSectionButtons.js"></script>
     <script defer src="./script/navigationBarButtons.js"></script>
     <script defer src="./script/expandableWindow.js"></script>
-    <script defer src="./script/authorizationWindow/authorizationWindow.js"></script>
+    <script
+      defer
+      src="./script/authorizationWindow/authorizationWindow.js"
+    ></script>
     <script defer src="./script/globalSettings.js"></script>
-
+    <script defer src="./tests/lighthouse.js"></script>
   </head>
   <body>
     <div class="navigationBar">
@@ -91,51 +94,58 @@
           <div class="lighthouseContainer">
             <div>
               <label class="inputContainer"
-                >Test name:<input type="text"
+                >Test name:<input class="js-lighthouse__fileName" type="text"
               /></label>
 
               <label class="checkboxContainer"
-                >HTML<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >HTML<input
+                  class="lighthouse-test js-lighthouse-outputHTML"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >CSV<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >CSV<input
+                  class="lighthouse-test js-lighthouse-outputCSV"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
             </div>
 
             <div>
               <label class="checkboxContainer"
-                >SEO<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >SEO<input
+                  class="lighthouse-test js-seoValue"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >Performance<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >Performance<input
+                  class="lighthouse-test js-performanceValue"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >Accessbility<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >Accessbility<input
+                  class="lighthouse-test js-accessbilityValue"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >Best Practices<input type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
+                >Best Practices<input
+                  class="lighthouse-test js-bestPracticesValue"
+                  type="checkbox" /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >PWA<input type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
+                >PWA<input
+                  class="lighthouse-test js-pwaValue"
+                  type="checkbox" /><span class="checkmark"></span
               ></label>
             </div>
           </div>
 
-          <button class="startTestingButton">Start testing</button>
+          <button class="startTestingButton js-lighthouseStartBtn">
+            Start testing
+          </button>
         </div>
         <div class="section section--2 js-section-2">
           <h2 class="section__heading">Fire</h2>
@@ -152,27 +162,25 @@
 
             <div>
               <label class="checkboxContainer"
-                >Fonts <input checked type="checkbox" name="" /><span
+                >Fonts <input checked type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Links <input checked type="checkbox" name="" /><span
+                >Links <input checked type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Images <input type="checkbox" name="" /><span
+                >Images <input type="checkbox" /><span class="checkmark"></span
+              ></label>
+              <label class="checkboxContainer"
+                >Meta:tags <input type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Meta:tags <input type="checkbox" name="" /><span
-                  class="checkmark"
-                ></span
-              ></label>
-              <label class="checkboxContainer"
-                >Console logs <input checked type="checkbox" name="" /><span
+                >Console logs <input checked type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
@@ -186,15 +194,15 @@
           <div class="configrationSection">
             <div>
               <label class="checkboxContainer"
-                >Headless<input type="checkbox" checked name="" /><span
-                  class="checkmark"
-                ></span
+                >Headless<input
+                  class="js-headlessInput"
+                  type="checkbox"
+                  checked /><span class="checkmark"></span
               ></label>
               <label class="checkboxContainer"
-                >Auth<input
-                  class="js-authCheckbox"
-                  type="checkbox"
-                  name="" /><span class="checkmark"></span
+                >Auth<input class="js-authCheckbox" type="checkbox" /><span
+                  class="checkmark"
+                ></span
               ></label>
 
               <label class="inputContainer"
@@ -235,24 +243,25 @@
                   ></textarea>
 
                   <label class="inputContainer inputContainer--hidden"
-                >URI<input
-                  class="URI__input js-authURI"
-                  type="text"
-              /></label>
+                    >URI<input class="URI__input js-authURI" type="text"
+                  /></label>
 
                   <button
                     class="configurationSection_autorizationButton js-authorizationButton"
                   >
                     Authorize me!
                   </button>
-
                 </fieldset>
               </div>
             </div>
             <div>
               <label class="textareaLabel"
                 ><span class="textarea_text">List of URL's</span>
-                <textarea class="textarea" cols="35" rows="15"></textarea>
+                <textarea
+                  class="textarea js-listOfUrls"
+                  cols="35"
+                  rows="15"
+                ></textarea>
               </label>
             </div>
           </div>
@@ -260,10 +269,12 @@
       </div>
 
       <div class="expandable-windowHidden js-expandable-window">
-
-        <div class="expandable__content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt illo accusamus expedita hic provident, impedit nostrum distinctio ipsa cupiditate facere perferendis aliquam a unde. Earum tenetur enim odio eveniet animi.</div>
-
-
+        <div class="expandable__content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+          illo accusamus expedita hic provident, impedit nostrum distinctio ipsa
+          cupiditate facere perferendis aliquam a unde. Earum tenetur enim odio
+          eveniet animi.
+        </div>
       </div>
       <button class="close-buttonArrowHidden js-showConsole">
         <i class="fa-solid fa-angles-right js-changeArrow"></i>
