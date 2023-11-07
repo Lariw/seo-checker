@@ -1,20 +1,52 @@
 {
   "name": "seo-checker",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
-  "main": "app/main.js",
-  "scripts": {},
+  "main": "app/electron.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
   "keywords": [
     "electron",
     "puppeteer",
     "seo",
     "lighthouse"
   ],
+  "build": {
+    "icon": "assets\\icon_256.ico",
+    "productName": "Seo-checker",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "app/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "browsers-win",
+        "to": "browsers",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
   "author": "Lariw",
   "license": "ISC",
   "dependencies": {
-    "electron": "^27.0.2",
     "lighthouse": "^9.6.1",
     "puppeteer": "^21.4.1"
+  },
+  "devDependencies": {
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4"
   }
 }

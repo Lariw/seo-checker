@@ -6,13 +6,6 @@ const pathChromeBrowser = path.join(
   "chrome-win",
   "chrome.exe"
 );
-const pathFirefoxBrowser = path.join(
-  __dirname,
-  "browsers",
-  "firefox-1424",
-  "firefox",
-  "firefox.exe"
-);
 
 const getDelay = () => {
   const delayInput = document.querySelector(".js-delayInput");
