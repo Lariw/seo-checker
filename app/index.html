@@ -41,42 +41,42 @@
       </button>
     </div>
 
-    <div class="mainContainer">
-      <div class="sections">
-        <div class="section_container">
+    <div>
+      <div class="section_container">
+        <div class="section__containerBtn">
           <button
             class="sections_button js-lighthouseSectionButton sections__currentSection"
           >
             <i class="fa-solid sections__buttonIcon fa-bolt"></i
             ><span class="sections__buttonText">Lighthouse</span>
           </button>
+          <div class="loadingBar--active"></div>
+        </div>
+        <div class="section__containerBtn">
           <button class="sections_button js-fireSectionButton">
-            <i class="fa-solid sections__buttonIcon fa-fire"></i
-            ><span class="sections__buttonText">Fire</span>
+            <i class="fa-solid fa-hammer sections__buttonIcon"></i
+            ><span class="sections__buttonText">Axe</span>
           </button>
+          <div class="loadingBar--active"></div>
+        </div>
+        <div class="section__containerBtn">
           <button class="sections_button js-spiderSectionButton">
             <i class="fa-solid sections__buttonIcon fa-spider"></i
             ><span class="sections__buttonText">Spider</span>
           </button>
+          <div class="loadingBar--active"></div>
+        </div>
+        <div class="section__containerBtn">
           <button class="sections_button js-settingsSectionButton">
             <i class="fa-solid sections__buttonIcon fa-gear"></i
             ><span class="sections__buttonText">Settings</span>
           </button>
         </div>
+      </div>
+    </div>
 
-        <div class="loaderContainer">
-          <div class="section__loadingBar">
-            <div class="section__loader">100%</div>
-          </div>
-          <div class="section__loadingBar">
-            <div class="section__loader">100%</div>
-          </div>
-          <div class="section__loadingBar">
-            <div class="section__loader">100%</div>
-          </div>
-          <div class="section__loadingBar--configuration"></div>
-        </div>
-
+    <div class="mainContainer">
+      <div class="sections">
         <section class="lighthouse">
           <div class="lighthouse__form">
             <div class="lighthouse__inputs">
@@ -88,12 +88,12 @@
               />
 
               <label class="checkboxContainer"
-                >Performance<input type="checkbox" /><span
+                >Performance<input checked type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >Accessbility<input type="checkbox" /><span
+                >Accessbility<input checked type="checkbox" /><span
                   class="checkmark"
                 ></span
               ></label>
@@ -106,7 +106,9 @@
                 ></span
               ></label>
               <label class="checkboxContainer"
-                >PWA<input type="checkbox" /><span class="checkmark"></span
+                >PWA<input checked type="checkbox" /><span
+                  class="checkmark"
+                ></span
               ></label>
             </div>
 
@@ -117,7 +119,7 @@
 
           <div class="lightohouse__about">
             <div class="lighthouse__aboutContainer">
-              <span>
+              <span class="lighthouse__aboutText">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
                 maxime soluta laudantium. Praesentium ratione, reprehenderit
                 dolor in, nostrum dolores maxime veritatis sint harum et ipsa
@@ -131,7 +133,7 @@
           </div>
         </section>
 
-        <section class="fire"></section>
+        <section class="axe"></section>
 
         <section class="crawler"></section>
       </div>

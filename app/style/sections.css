@@ -1,13 +1,30 @@
 .sections {
   width: 100%;
-  height: calc(100vh - 105px);
 }
 
 .section_container {
   display: flex;
-  padding-bottom: 15px;
+  gap: 5px;
   background-color: #0d1821;
   justify-content: space-around;
+}
+
+.section__containerBtn {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.loadingBar {
+  background-color: rgb(154, 165, 154);
+  width: 100%;
+}
+
+.loadingBar--active {
+  background-color: green;
+  width: 100%;
+  height: 19px;
 }
 
 .sections_button {
@@ -22,10 +39,6 @@
 
 .sections_button:hover {
   color: #34adf8;
-}
-
-.section_container button {
-  margin-bottom: 10px;
 }
 
 .sections__buttonText {
@@ -99,7 +112,7 @@
 .lighthouse {
   display: flex;
   gap: 20px;
-  height: 100%;
+  height: calc(100vh - 114px);
 }
 
 .lighthouse__form {
@@ -140,11 +153,16 @@
   margin-bottom: 50px;
   border: none;
   outline: none;
+  font-family: "Pixelify Sans", sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 0.3rem;
 }
 
 .lightohouse__about {
   display: flex;
-  width: 30%;
+  width: 50%;
+  margin: 20px;
 }
 
 .lighthouse__aboutContainer {
@@ -152,6 +170,9 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
+  margin: 15px auto;
   align-items: center;
+}
+
+.lighthouse__aboutText {
 }
