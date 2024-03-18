@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="./style/main.css" />
     <link rel="stylesheet" href="./style/sections.css" />
     <link rel="stylesheet" href="./style/sectionBlock.css" />
-    <link rel="stylesheet" href="./style/configurationSection.css" />
     <link rel="stylesheet" href="./style/globalStyles.css" />
-    <link rel="stylesheet" href="./style/lighthouse.css" />
-    <link rel="stylesheet" href="./style/spider.css" />
-    <link rel="stylesheet" href="./style/toggleWindow.css" />
     <link rel="stylesheet" href="./style/modal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,37 +39,47 @@
       </button>
     </div>
 
-    <div>
-      <div class="section_container">
-        <div class="section__containerBtn">
-          <button
-            class="sections_button js-lighthouseSectionButton sections__currentSection"
-          >
-            <i class="fa-solid sections__buttonIcon fa-bolt"></i
-            ><span class="sections__buttonText">Lighthouse</span>
-          </button>
-          <div class="loadingBar--active"></div>
+    <div class="section_container">
+      <div class="section__containerBtn">
+        <button
+          class="sections_button js-lighthouseSectionButton sections__currentSection"
+        >
+          <i class="fa-solid sections__buttonIcon fa-bolt"></i
+          ><span class="sections__buttonText">Lighthouse</span>
+        </button>
+        <div class="lighthouse__progressBar">
+          <div class="loadingBar"></div>
+          <div class="progress-bar"></div>
+          <div class="progressBar__value">90%</div>
         </div>
-        <div class="section__containerBtn">
-          <button class="sections_button js-fireSectionButton">
-            <i class="fa-solid fa-hammer sections__buttonIcon"></i
-            ><span class="sections__buttonText">Axe</span>
-          </button>
-          <div class="loadingBar--active"></div>
+      </div>
+      <div class="section__containerBtn">
+        <button class="sections_button js-fireSectionButton">
+          <i class="fa-solid fa-hammer sections__buttonIcon"></i
+          ><span class="sections__buttonText">Axe</span>
+        </button>
+        <div class="axe__progressBar">
+          <div class="loadingBar"></div>
+          <div class="progress-bar"></div>
+          <div class="progressBar__value">90%</div>
         </div>
-        <div class="section__containerBtn">
-          <button class="sections_button js-spiderSectionButton">
-            <i class="fa-solid sections__buttonIcon fa-spider"></i
-            ><span class="sections__buttonText">Spider</span>
-          </button>
-          <div class="loadingBar--active"></div>
+      </div>
+      <div class="section__containerBtn">
+        <button class="sections_button js-spiderSectionButton">
+          <i class="fa-solid sections__buttonIcon fa-spider"></i
+          ><span class="sections__buttonText">Spider</span>
+        </button>
+        <div class="spider__progressBar">
+          <div class="loadingBar"></div>
+          <div class="progress-bar"></div>
+          <div class="progressBar__value">90%</div>
         </div>
-        <div class="section__containerBtn">
-          <button class="sections_button js-settingsSectionButton">
-            <i class="fa-solid sections__buttonIcon fa-gear"></i
-            ><span class="sections__buttonText">Settings</span>
-          </button>
-        </div>
+      </div>
+      <div class="section__containerBtn">
+        <button class="sections_button js-settingsSectionButton">
+          <i class="fa-solid sections__buttonIcon fa-gear"></i
+          ><span class="sections__buttonText">Settings</span>
+        </button>
       </div>
     </div>
 

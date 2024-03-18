@@ -7,24 +7,36 @@
   gap: 5px;
   background-color: #0d1821;
   justify-content: space-around;
+  margin-bottom: 15px;
 }
 
 .section__containerBtn {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 5px;
 }
 
 .loadingBar {
-  background-color: rgb(154, 165, 154);
-  width: 100%;
-}
-
-.loadingBar--active {
-  background-color: green;
+  background-color: rgb(110, 110, 110);
   width: 100%;
   height: 19px;
+}
+
+.progress-bar {
+  width: 50%;
+  height: 19px;
+  position: relative;
+  top: -19px;
+  background-color: green;
+}
+
+.progressBar__value {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: -38px;
+  height: 0;
+  color: #ffffff;
 }
 
 .sections_button {
@@ -35,6 +47,7 @@
   border: none;
   background-color: #0d1821;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .sections_button:hover {
@@ -112,7 +125,7 @@
 .lighthouse {
   display: flex;
   gap: 20px;
-  height: calc(100vh - 114px);
+  height: calc(100vh - 134px);
 }
 
 .lighthouse__form {
@@ -146,6 +159,14 @@
   color: #fff;
 }
 
+.button:hover {
+  background-color: hsl(207, 90%, 59%);
+}
+
+.button:active {
+  background-color: hsl(207, 90%, 64%);
+}
+
 .lighthouse__nameInput {
   width: 100%;
   padding: 15px;
@@ -172,4 +193,18 @@
   text-align: center;
   margin: 15px auto;
   align-items: center;
+}
+
+/* progress bars */
+
+.lighthouse__progressBar {
+  display: none;
+}
+
+.axe__progressBar {
+  display: none;
+}
+
+.spider__progressBar {
+  display: none;
 }
