@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./style/lighthouse.css" />
     <link rel="stylesheet" href="./style/spider.css" />
     <link rel="stylesheet" href="./style/toggleWindow.css" />
+    <link rel="stylesheet" href="./style/modal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,6 +26,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./script/changeSectionButtons.js"></script>
+    <script defer src="./script/navigationBarButtons.js"></script>
   </head>
   <body>
     <div class="navigationBar">
@@ -136,6 +138,16 @@
         <section class="axe"></section>
 
         <section class="crawler"></section>
+      </div>
+    </div>
+
+    <div class="modal js-modal">
+      <div class="modal__closeBtn">
+        <button class="modal__button js-closeModalBtn">X</button>
+      </div>
+
+      <div class="modal__content">
+        <h1>modal</h1>
       </div>
     </div>
   </body>

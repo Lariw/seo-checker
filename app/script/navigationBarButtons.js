@@ -1,6 +1,17 @@
 (() => {
   const { ipcRenderer } = require("electron");
 
+  const openModal = () => {
+    const modal = document.querySelector(".js-modal");
+    const closeModalBtn = document.querySelector(".js-closeModalBtn");
+
+    closeModalBtn.addEventListener("click", () => {
+      modal.classList.toggle("modal");
+    });
+  };
+
+  openModal();
+
   const ipc = ipcRenderer;
 
   const exitButton = document.querySelector(".js-exitButton");
