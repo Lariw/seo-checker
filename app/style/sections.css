@@ -1,5 +1,6 @@
 .sections {
   width: 100%;
+  height: calc(100vh - 105px);
 }
 
 .section_container {
@@ -7,9 +8,6 @@
   padding-bottom: 15px;
   background-color: #0d1821;
   justify-content: space-around;
-  -webkit-box-shadow: 0px 26px 12px -12px rgba(237, 237, 237, 1);
-  -moz-box-shadow: 0px 26px 12px -12px rgba(237, 237, 237, 1);
-  box-shadow: 0px 26px 12px -12px rgba(237, 237, 237, 1);
 }
 
 .sections_button {
@@ -96,4 +94,64 @@
 .section__loadingBar--configuration {
   width: 100%;
   background-color: #0d1821;
+}
+
+.lighthouse {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.lighthouse__form {
+  flex-direction: column;
+  width: 70%;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lighthouse__inputs {
+  width: 80%;
+}
+
+.buttons {
+  width: 40%;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.lighthouse__nameInput {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  border: none;
+  outline: none;
+}
+
+.lightohouse__about {
+  display: flex;
+  width: 30%;
+}
+
+.lighthouse__aboutContainer {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
 }

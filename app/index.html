@@ -20,20 +20,11 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src="./script/configurationSection.js"></script>
     <script
       src="https://kit.fontawesome.com/992def5dc8.js"
       crossorigin="anonymous"
     ></script>
     <script defer src="./script/changeSectionButtons.js"></script>
-    <script defer src="./script/navigationBarButtons.js"></script>
-    <script defer src="./script/expandableWindow.js"></script>
-    <script
-      defer
-      src="./script/authorizationWindow/authorizationWindow.js"
-    ></script>
-    <script defer src="./script/globalSettings.js"></script>
-    <script defer src="./tests/lighthouse.js"></script>
   </head>
   <body>
     <div class="navigationBar">
@@ -85,200 +76,65 @@
           </div>
           <div class="section__loadingBar--configuration"></div>
         </div>
-      </div>
 
-      <div class="section_block">
-        <div class="section section--1 js-section-1">
-          <h2 class="section__heading">Lighthouse</h2>
-
-          <div class="lighthouseContainer">
-            <div>
-              <label class="inputContainer"
-                >Test name:<input class="js-lighthouse__fileName" type="text"
-              /></label>
+        <section class="lighthouse">
+          <div class="lighthouse__form">
+            <div class="lighthouse__inputs">
+              <input
+                class="lighthouse__nameInput"
+                placeholder="name"
+                id="lighthouse__testName"
+                type="text"
+              />
 
               <label class="checkboxContainer"
-                >HTML<input
-                  class="lighthouse-test js-lighthouse-outputHTML"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
+                >Performance<input type="checkbox" /><span
+                  class="checkmark"
+                ></span
               ></label>
               <label class="checkboxContainer"
-                >CSV<input
-                  class="lighthouse-test js-lighthouse-outputCSV"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
+                >Accessbility<input type="checkbox" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >SEO<input type="checkbox" /><span class="checkmark"></span
+              ></label>
+              <label class="checkboxContainer"
+                >Best practices<input type="checkbox" /><span
+                  class="checkmark"
+                ></span
+              ></label>
+              <label class="checkboxContainer"
+                >PWA<input type="checkbox" /><span class="checkmark"></span
               ></label>
             </div>
 
-            <div>
-              <label class="checkboxContainer"
-                >SEO<input
-                  class="lighthouse-test js-seoValue"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >Performance<input
-                  class="lighthouse-test js-performanceValue"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >Accessbility<input
-                  class="lighthouse-test js-accessbilityValue"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >Best Practices<input
-                  class="lighthouse-test js-bestPracticesValue"
-                  type="checkbox" /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >PWA<input
-                  class="lighthouse-test js-pwaValue"
-                  type="checkbox" /><span class="checkmark"></span
-              ></label>
+            <div class="buttons">
+              <button class="button">Check</button>
             </div>
           </div>
 
-          <button class="startTestingButton js-lighthouseStartBtn">
-            Start testing
-          </button>
-        </div>
-        <div class="section section--2 js-section-2">
-          <h2 class="section__heading">Fire</h2>
-        </div>
-        <div class="section section--3 js-section-3">
-          <h2 class="section__heading">Spider</h2>
-
-          <div class="spiderContainer">
-            <div>
-              <label class="inputContainer"
-                >Test name:<input type="text"
-              /></label>
-            </div>
-
-            <div>
-              <label class="checkboxContainer"
-                >Fonts <input checked type="checkbox" /><span
-                  class="checkmark"
-                ></span
-              ></label>
-              <label class="checkboxContainer"
-                >Links <input checked type="checkbox" /><span
-                  class="checkmark"
-                ></span
-              ></label>
-              <label class="checkboxContainer"
-                >Images <input type="checkbox" /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >Meta:tags <input type="checkbox" /><span
-                  class="checkmark"
-                ></span
-              ></label>
-              <label class="checkboxContainer"
-                >Console logs <input checked type="checkbox" /><span
-                  class="checkmark"
-                ></span
-              ></label>
+          <div class="lightohouse__about">
+            <div class="lighthouse__aboutContainer">
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                maxime soluta laudantium. Praesentium ratione, reprehenderit
+                dolor in, nostrum dolores maxime veritatis sint harum et ipsa
+                doloremque fugit nemo nobis aliquam. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Facilis accusamus voluptas libero
+                iste ea id fugit voluptatibus sequi, eius iure necessitatibus
+                voluptatum explicabo et, ipsum veritatis, esse sunt voluptatem.
+                Non.
+              </span>
             </div>
           </div>
-          <button class="startTestingButton">Start testing</button>
-        </div>
-        <div class="section section--4 js-section-4">
-          <h2 class="section__heading">Settings</h2>
+        </section>
 
-          <div class="configrationSection">
-            <div>
-              <label class="checkboxContainer"
-                >Headless<input
-                  class="js-headlessInput"
-                  type="checkbox"
-                  checked /><span class="checkmark"></span
-              ></label>
-              <label class="checkboxContainer"
-                >Auth<input class="js-authCheckbox" type="checkbox" /><span
-                  class="checkmark"
-                ></span
-              ></label>
+        <section class="fire"></section>
 
-              <label class="inputContainer"
-                >Delay<input
-                  step="1000"
-                  min="2000"
-                  max="25000"
-                  value="5000"
-                  class="delay__input js-delayInput"
-                  type="number"
-              /></label>
-
-              <div class="configurationSection__radioContainer">
-                <fieldset>
-                  <legend>Authorization</legend>
-
-                  <label class="checkboxContainer checkboxContainer--radio"
-                    >Window Auth<input
-                      class="js-windowsAuthRadio"
-                      type="radio"
-                      name="authButton" /><span
-                      class="checkmark checkmark--radio"
-                    ></span
-                  ></label>
-                  <label class="checkboxContainer checkboxContainer--radio"
-                    >Cookies headers<input
-                      class="js-cookieAuthRadio"
-                      type="radio"
-                      name="authButton" /><span
-                      class="checkmark checkmark--radio"
-                    ></span
-                  ></label>
-
-                  <textarea
-                    class="textarea textarea--headers js-showCookieContainer"
-                    cols="40"
-                    rows="10"
-                  ></textarea>
-
-                  <label class="inputContainer inputContainer--hidden"
-                    >URI<input class="URI__input js-authURI" type="text"
-                  /></label>
-
-                  <button
-                    class="configurationSection_autorizationButton js-authorizationButton"
-                  >
-                    Authorize me!
-                  </button>
-                </fieldset>
-              </div>
-            </div>
-            <div>
-              <label class="textareaLabel"
-                ><span class="textarea_text">List of URL's</span>
-                <textarea
-                  class="textarea js-listOfUrls"
-                  cols="35"
-                  rows="15"
-                ></textarea>
-              </label>
-            </div>
-          </div>
-        </div>
+        <section class="crawler"></section>
       </div>
-
-      <div class="expandable-windowHidden js-expandable-window">
-        <div class="expandable__content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
-          illo accusamus expedita hic provident, impedit nostrum distinctio ipsa
-          cupiditate facere perferendis aliquam a unde. Earum tenetur enim odio
-          eveniet animi.
-        </div>
-      </div>
-      <button class="close-buttonArrowHidden js-showConsole">
-        <i class="fa-solid fa-angles-right js-changeArrow"></i>
-      </button>
     </div>
   </body>
 </html>

@@ -19,33 +19,11 @@
   -webkit-app-region: no-drag;
 }
 
-.navigationBar__button:nth-child(1):hover {
-  background-color: #c0c02a;
+.navigationBar__button:hover {
+  background-color: hsl(207, 43%, 15%);
 }
 
-.navigationBar__button:nth-child(2):hover {
-  background-color: #2d8b29;
-}
 
-.navigationBar__button:nth-child(3):hover {
-  background-color: #ff0000;
-}
-
-.navigationBar__button:nth-child(1):active {
-  background-color: #cccc38;
-}
-
-.navigationBar__button:nth-child(2):active {
-  background-color: #39b135;
-}
-
-.navigationBar__button:nth-child(3):active {
-  background-color: #ff4d4d;
-}
-
-.navigationBar__button:active {
-  background-color: #fafafa;
-}
 
 .navigationBar__icons {
   font-size: 13px;
