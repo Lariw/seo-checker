@@ -167,7 +167,7 @@
   background-color: hsl(207, 90%, 64%);
 }
 
-.lighthouse__nameInput {
+.fileName__input {
   width: 100%;
   padding: 15px;
   border-radius: 5px;
@@ -207,4 +207,23 @@
 
 .spider__progressBar {
   display: none;
+}
+
+/* axe section */
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.sectionWrapper {
+  width: 100%;
+}
+
+.inputs__columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50px;
 }

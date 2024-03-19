@@ -89,7 +89,7 @@
           <div class="lighthouse__form">
             <div class="lighthouse__inputs">
               <input
-                class="lighthouse__nameInput"
+                class="fileName__input"
                 placeholder="name"
                 id="lighthouse__testName"
                 type="text"
@@ -141,44 +141,83 @@
           </div>
         </section>
 
-        <section class="axe"></section>
+        <section class="axe">
+          <div class="sectionContent">
+            <div class="sectionWrapper sectionWrapper--form">
+              <input placeholder="Name" class="fileName__input" type="text" />
 
-        <section class="crawler">
-          <div>
-            <input placeholder="Name" type="text" />
-            <label class="checkboxContainer"
-              >Console logs<input type="checkbox" /><span
-                class="checkmark"
-              ></span
-            ></label>
-            <label class="checkboxContainer"
-              >Fonts<input type="checkbox" /><span class="checkmark"></span
-            ></label>
-            <label class="checkboxContainer"
-              >Images<input type="checkbox" /><span class="checkmark"></span
-            ></label>
-            <label class="checkboxContainer"
-              >Links<input type="checkbox" /><span class="checkmark"></span
-            ></label>
-            <label class="checkboxContainer"
-              >Meta:data<input type="checkbox" /><span class="checkmark"></span
-            ></label>
-          </div>
-          <div class="lightohouse__about">
-            <div class="lighthouse__aboutContainer">
-              <span class="lighthouse__aboutText">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                maxime soluta laudantium. Praesentium ratione, reprehenderit
-                dolor in, nostrum dolores maxime veritatis sint harum et ipsa
-                doloremque fugit nemo nobis aliquam. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Facilis accusamus voluptas libero
-                iste ea id fugit voluptatibus sequi, eius iure necessitatibus
-                voluptatum explicabo et, ipsum veritatis, esse sunt voluptatem.
-                Non.
-              </span>
+              <div class="inputs__columns">
+                <div class="inputsColumnsContainer">
+                  <label class="checkboxContainer"
+                    >WCAG 1.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 1.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 1.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 1.3<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 4.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                </div>
+                <div class="inputsColumnsContainer">
+                  <label class="checkboxContainer"
+                    >WCAG 1.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 1.5<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 1.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >WCAG 2.1<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                  <label class="checkboxContainer"
+                    >check all<input type="checkbox" /><span
+                      class="checkmark"
+                    ></span
+                  ></label>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <button class="button">Check</button>
+              </div>
+            </div>
+
+            <div class="sectionWrapper">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+              possimus provident blanditiis maiores placeat, pariatur aliquid
+              enim quae nobis, in dolorem fuga reprehenderit veniam? Quos,
+              numquam? Optio debitis ipsum id!
             </div>
           </div>
         </section>
+
+        <section class="crawler"></section>
       </div>
     </div>
 
