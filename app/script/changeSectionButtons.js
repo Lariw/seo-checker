@@ -67,3 +67,15 @@
     displaySection(settingsSection);
   });
 })();
+
+(() => {
+  const authorizeSwitch = document.querySelector(".js-authorizeSwitch");
+  const authorizeContainer = document.querySelector(".js-authContainer");
+  authorizeSwitch.addEventListener("change", () => {
+    if (authorizeSwitch.checked) {
+      authorizeContainer.style.display = "flex";
+    } else {
+      authorizeContainer.style.display = "none";
+    }
+  });
+})();
