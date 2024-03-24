@@ -19,11 +19,23 @@ lighthouseStartBtn.addEventListener('click', () => {
     .filter(input => input.checked)
     .map(input => input.getAttribute('name'));
 
-  lighthouseCrawler(lighthouseFileName, checkedOptions);
+    try{
+      lighthouseCrawler(lighthouseFileName, checkedOptions)
+      .then(() => {
+        lighthouseStartBtn.innerHTML = 'Check';
+        lighthouseStartBtn.classList.remove('btn-active');
+      })
+    } catch(e){
+      console.log(e)
+      lighthouseStartBtn.innerHTML = 'Check';
+      lighthouseStartBtn.classList.remove('btn-active');
+    }
 })
 
 
 const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
+
+  let index = 0;
 
   for (const url of getUrls()) {
     const browser = await puppeteer.launch({
@@ -31,6 +43,8 @@ const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
     });
 
     const page = await browser.newPage();
+
+    index++;
 
     await page.goto(url);
 
@@ -54,8 +68,8 @@ const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
     const writeCsvFile = util.promisify(fs.writeFile);
 
 
-    const htmlFileName = `${date}.html`;
-    const csvFileName = `${date}.csv`;
+    const htmlFileName = `${index}.html`;
+    const csvFileName = `${index}.csv`;
 
     await writeHtmlFile(
       path.join(saveFileName, lighthouseFileName, htmlFileName), report.report[0]

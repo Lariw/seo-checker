@@ -7,16 +7,26 @@ const { createHtmlReport } = require("axe-html-reporter");
 axeStartBtn.addEventListener('click', () => {
     const axeReportFilename = document.querySelector('.js-axeFilename').value;
     const reportPath = path.join(axeReportsFile, axeReportFilename);
-
+    axeStartBtn.innerHTML = 'In progress.. <div class="loadingCircle"></div>';
+    axeStartBtn.classList.add('btn-active');
     const axeInputs = document.querySelectorAll('.axe-input');
 
     let checkedOptions = Array.from(axeInputs)
-    .filter(input => input.checked)
-    .map(input => input.getAttribute('name'));
+        .filter(input => input.checked)
+        .map(input => input.getAttribute('name'));
 
-    console.log(checkedOptions);
+    try {
+        axeCrawling(reportPath, checkedOptions)
+            .then(() => {
+                axeStartBtn.innerHTML = 'Check';
+                axeStartBtn.classList.remove('btn-active');
+            })
 
-    // axeCrawling(reportPath, checkedOptions);
+    } catch (e) {
+        console.log(e);
+        axeStartBtn.innerHTML = 'Check';
+        axeStartBtn.classList.remove('btn-active');
+    }
 })
 
 const trimUrls = (url) => {
@@ -66,7 +76,7 @@ const axeCrawling = async (reportPath, checkedOptions) => {
                 },
             });
 
-            const fileName = `accessibility_report_${encodeURIComponent(
+            const fileName = `axe${getCurrentDate()}_report_${encodeURIComponent(
                 prefixUrl
             )}.html`;
 
