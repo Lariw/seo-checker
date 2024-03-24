@@ -21,6 +21,7 @@
   <script defer src="./script/navigationBarButtons.js"></script>
   <script defer src="./tests/lighthouse.js"></script>
   <script defer src="./tests/main.js"></script>
+  <script defer src="./tests/axe.js"></script>
 </head>
 
 <body>
@@ -95,7 +96,7 @@
         </div>
 
         <div class="buttons">
-          <button name='lighthouse' class="button btn-active js-lighthouseStartBtn">Check</button>
+          <button name='lighthouse' class="button js-lighthouseStartBtn">Check</button>
         </div>
       </div>
 
@@ -116,7 +117,7 @@
     <section class="axe section">
       <div class="formContainer">
         <div class="inputsContainer">
-          <input placeholder="filename" class="fileName__input" type="text" />
+          <input placeholder="filename" class="fileName__input js-axeFilename" type="text" />
 
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
@@ -138,7 +139,7 @@
           </div>
         </div>
         <div class="buttons">
-          <button name="axe" class="button">Check</button>
+          <button name="axe" class="button js-axeStartBtn">Check</button>
         </div>
       </div>
 

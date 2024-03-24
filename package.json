@@ -42,6 +42,8 @@
   "author": "Lariw",
   "license": "ISC",
   "dependencies": {
+    "@axe-core/puppeteer": "^4.8.5",
+    "axe-html-reporter": "^2.2.3",
     "lighthouse": "^9.6.1",
     "puppeteer": "^21.4.1"
   },

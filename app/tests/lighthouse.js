@@ -1,8 +1,6 @@
 const puppeteer = require("puppeteer");
 const lighthouse = require('lighthouse');
 const path = require('path')
-
-const fsP = require("fs/promises");
 const util = require("util");
 const fs = require("fs");
 

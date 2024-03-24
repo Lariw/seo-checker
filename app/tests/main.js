@@ -1,7 +1,11 @@
+const lighthouseReportsFile = 'Lighthouse - Reports';
+const axeReportsFile = 'Axe - Reports';
+const spiderReportsFile = 'Spider - Reports';
+
+
 const getUrls = () => {
     let noTrimmedUrls = document.querySelector('#textarea__urls').value;
     let urlsList = noTrimmedUrls.split('\n').map(link => link.trim()).filter(link => link.startsWith("https://"));
-
     if (urlsList.length === 0) {
         console.log('empty list, please add https:// to urls.')
     }
@@ -20,17 +24,20 @@ const getHeadless = () => {
 
 const getAuthorization = () => {
     const authValue = document.querySelector('.js-authorizeSwitch');
-
     if (authValue.checked) {
-
         return true;
     }
 
     return false
-
 }
 
-function createTestFolders(folderNames) {
+const getCurrentDate = () => {
+    const currentDate = new Date();
+    const unixTimestampInSec = Math.floor(currentDate.getTime() / 1000);
+    return unixTimestampInSec;
+}
+
+const createTestFolders = (folderNames) => {
     folderNames.forEach(folderName => {
         if (!fs.existsSync(folderName)) {
             fs.mkdirSync(folderName);
@@ -38,6 +45,10 @@ function createTestFolders(folderNames) {
     });
 }
 
-const foldersToCreate = ['Lighthouse - Reports', 'Spider - Reports', 'Axe - Reports'];
+const foldersToCreate = [lighthouseReportsFile, axeReportsFile, spiderReportsFile];
 
 createTestFolders(foldersToCreate);
+
+const activeBtnToggle = () => {
+    
+}
