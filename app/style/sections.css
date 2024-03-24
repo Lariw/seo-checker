@@ -265,3 +265,31 @@
   padding: 6px;
   font-family: "Courier New", Courier, monospace;
 }
+
+.btn-active {
+  width:200px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.loadingCircle {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #11202c;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); } 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

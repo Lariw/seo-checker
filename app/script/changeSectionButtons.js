@@ -35,12 +35,6 @@
       spiderSection,
       settingsSection,
     ];
-
-    for (hideSection of tab) {
-      hideSection.style.display = "none";
-    }
-
-    section.style.display = "block";
   };
 
   showLighthouseSection.addEventListener("click", () => {

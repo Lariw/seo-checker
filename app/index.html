@@ -19,6 +19,8 @@
   <script src="https://kit.fontawesome.com/992def5dc8.js" crossorigin="anonymous"></script>
   <script defer src="./script/changeSectionButtons.js"></script>
   <script defer src="./script/navigationBarButtons.js"></script>
+  <script defer src="./tests/lighthouse.js"></script>
+  <script defer src="./tests/main.js"></script>
 </head>
 
 <body>
@@ -80,20 +82,20 @@
     <section class="lighthouse section">
       <div class="formContainer">
         <div class="inputsContainer">
-          <input class="fileName__input" placeholder="filename" id="lighthouse__testName" type="text" />
+          <input class="fileName__input input-lighthouse" placeholder="filename" id="lighthouse__testName" type="text" />
 
-          <label class="checkboxContainer">Performance<input checked type="checkbox" /><span
+          <label class="checkboxContainer">Performance<input class="lighthouse__input" name="performance" checked type="checkbox" /><span
               class="checkmark"></span></label>
-          <label class="checkboxContainer">Accessbility<input checked type="checkbox" /><span
+          <label class="checkboxContainer">Accessbility<input class="lighthouse__input" name="accessibility" checked type="checkbox" /><span
               class="checkmark"></span></label>
-          <label class="checkboxContainer">SEO<input type="checkbox" /><span class="checkmark"></span></label>
-          <label class="checkboxContainer">Best practices<input type="checkbox" /><span
+          <label class="checkboxContainer">SEO<input class="lighthouse__input" name="seo" type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">Best practices<input class="lighthouse__input" name="best-practices"  type="checkbox" /><span
               class="checkmark"></span></label>
-          <label class="checkboxContainer">PWA<input checked type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">PWA<input class="lighthouse__input" name="pwa" checked type="checkbox" /><span class="checkmark"></span></label>
         </div>
 
         <div class="buttons">
-          <button class="button">Check</button>
+          <button name='lighthouse' class="button btn-active js-lighthouseStartBtn">Check</button>
         </div>
       </div>
 
@@ -120,25 +122,23 @@
             <div class="inputsColumnsContainer">
               <h2>WCAG 2</h2>
               <label class="checkboxContainer">Level A<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Level AA<input type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input checked type="checkbox" /><span class="checkmark"></span></label>
               <label class="checkboxContainer">Level AAA<input type="checkbox" /><span class="checkmark"></span></label>
             </div>
             <div class="inputsColumnsContainer">
               <h2>WCAG 2.1</h2>
               <label class="checkboxContainer">Level A<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Level AA<input type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input checked type="checkbox" /><span class="checkmark"></span></label>
             </div>
 
             <div class="inputsColumnsContainer">
               <h2>WCAG 2.2</h2>
-              <label class="checkboxContainer">Level AA<input type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input checked type="checkbox" /><span class="checkmark"></span></label>
             </div>
           </div>
-
-
         </div>
         <div class="buttons">
-          <button class="button">Check</button>
+          <button name="axe" class="button">Check</button>
         </div>
       </div>
 
@@ -157,11 +157,11 @@
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
               <label class="checkboxContainer">Fonts<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Images<input type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Images<input checked type="checkbox" /><span class="checkmark"></span></label>
               <label class="checkboxContainer">Console logs<input type="checkbox" /><span
                   class="checkmark"></span></label>
-              <label class="checkboxContainer">Links<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Screenshot<input type="checkbox" /><span
+              <label class="checkboxContainer">Links<input checked type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Screenshot<input checked type="checkbox" /><span
                   class="checkmark"></span></label>
             </div>
             <div class="inputsColumnsContainer">
@@ -174,7 +174,7 @@
         </div>
 
         <div class="buttons">
-          <button class="button">Check</button>
+          <button name="spider" class="button">Check</button>
         </div>
       </div>
 
@@ -191,7 +191,7 @@
           <li class="settingsListItem">
             <div class="settingsTitle">Headless</div>
             <label class="switch">
-              <input type="checkbox" checked />
+              <input type="checkbox" class="js-headless" />
               <span class="slider round"></span>
             </label>
           </li>
@@ -212,7 +212,7 @@
             <div class="settingsTitle">
               <label for="textarea__urls">Urls</label>
             </div>
-            <textarea class="textarea" id="textarea__urls" cols="30" rows="10"></textarea>
+            <textarea class="textarea" id="textarea__urls" cols="30" rows="10">https://google.com/</textarea>
           </li>
         </ul>
       </div>
