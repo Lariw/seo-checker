@@ -22,16 +22,11 @@ const createReportsFolder = (reportPath, fileName, reportHTML) => {
         fs.mkdirSync(reportPath);
     }
 
-
-
     fs.writeFileSync(path.join(reportPath, fileName), reportHTML, "utf-8");
-
 }
 
 
 const axeCrawling = async (reportPath) => {
-
-    const date = getCurrentDate();
 
     for (const url of getUrls()) {
         const browser = await puppeteer.launch({
