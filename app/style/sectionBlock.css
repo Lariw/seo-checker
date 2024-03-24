@@ -1,10 +1,4 @@
-.section {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-  background-color: #344966;
-  height: 596px;
-}
+
 
 .section__heading {
   text-align: center;
