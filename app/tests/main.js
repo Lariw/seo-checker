@@ -49,6 +49,3 @@ const foldersToCreate = [lighthouseReportsFile, axeReportsFile, spiderReportsFil
 
 createTestFolders(foldersToCreate);
 
-const activeBtnToggle = () => {
-    
-}

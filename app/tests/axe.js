@@ -6,9 +6,17 @@ const { createHtmlReport } = require("axe-html-reporter");
 
 axeStartBtn.addEventListener('click', () => {
     const axeReportFilename = document.querySelector('.js-axeFilename').value;
-    const reportPath = path.join(axeReportsFile, axeReportFilename)
+    const reportPath = path.join(axeReportsFile, axeReportFilename);
 
-    axeCrawling(reportPath);
+    const axeInputs = document.querySelectorAll('.axe-input');
+
+    let checkedOptions = Array.from(axeInputs)
+    .filter(input => input.checked)
+    .map(input => input.getAttribute('name'));
+
+    console.log(checkedOptions);
+
+    // axeCrawling(reportPath, checkedOptions);
 })
 
 const trimUrls = (url) => {
@@ -26,7 +34,7 @@ const createReportsFolder = (reportPath, fileName, reportHTML) => {
 }
 
 
-const axeCrawling = async (reportPath) => {
+const axeCrawling = async (reportPath, checkedOptions) => {
 
     for (const url of getUrls()) {
         const browser = await puppeteer.launch({
@@ -41,13 +49,7 @@ const axeCrawling = async (reportPath) => {
 
         try {
             const results = await new AxePuppeteer(page)
-                .withTags([
-                    "wcag2a",
-                    "wcag2aa",
-                    "wcag21a",
-                    "wcag21aa",
-                    "wcag22aa",
-                ])
+                .withTags(checkedOptions)
                 .analyze();
 
             const reportHTML = createHtmlReport({
