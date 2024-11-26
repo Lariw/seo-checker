@@ -21,15 +21,6 @@
 })();
 
 (() => {
-  const modal = document.querySelector(".js-modal");
-  const closeModalBtn = document.querySelector(".js-closeModalBtn");
-
-  closeModalBtn.addEventListener("click", () => {
-    modal.classList.toggle("modal");
-  });
-})();
-
-(() => {
   document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".sections_button");
     const sections = document.querySelectorAll("section");

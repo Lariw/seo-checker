@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./style/sectionBlock.css" />
   <link rel="stylesheet" href="./style/globalStyles.css" />
   <link rel="stylesheet" href="./style/modal.css" />
+  <link rel="stylesheet" href="./style/windowPopup.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
@@ -279,13 +280,17 @@
       </div>
     </section>
   </main>
-  <div class="modal js-modal">
-    <div class="modal__closeBtn">
-      <button class="modal__button js-closeModalBtn">X</button>
+
+  <div class="windowPopup">
+    <div class="windowPopup-header">
+        <img class="warningIcon" src="./images/warning-icon.webp" alt="Warning icon">
+        <i class="fa-solid fa-xmark navigationBar__icons" aria-hidden="true"></i>
     </div>
+    <div class="windowPopup-content">
+        <!-- Treść popupu -->
+    </div>
+</div>
 
-
-  </div>
 </body>
 
 </html>

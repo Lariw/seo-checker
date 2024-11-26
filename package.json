@@ -5,7 +5,8 @@
   "main": "app/electron.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "start:nodemon": "nodemon --watch main.js --exec npm start"
   },
   "keywords": [
     "electron",
@@ -13,40 +14,40 @@
     "seo",
     "lighthouse"
   ],
-"build": {
-  "icon": "assets/icon_256.ico",
-  "productName": "Seo-checker",
-  "mac": {
-    "category": "public.app-category.developer-tools",
-    "target": [
-      "dmg",
-      "zip"
+  "build": {
+    "icon": "assets/icon_256.ico",
+    "productName": "Seo-checker",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "assets/icon_256.icns"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "app/**/*"
     ],
-    "icon": "assets/icon_256.icns"
+    "extraResources": [
+      {
+        "from": "browsers-win",
+        "to": "browsers",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
   },
-  "win": {
-    "target": "nsis"
-  },
-  "nsis": {
-    "oneClick": false,
-    "allowToChangeInstallationDirectory": true
-  },
-  "directories": {
-    "output": "dist"
-  },
-  "files": [
-    "app/**/*"
-  ],
-  "extraResources": [
-    {
-      "from": "browsers-win",
-      "to": "browsers",
-      "filter": [
-        "**/*"
-      ]
-    }
-  ]
-},
   "author": "Lariw",
   "license": "ISC",
   "dependencies": {
