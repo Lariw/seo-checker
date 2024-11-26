@@ -84,7 +84,6 @@
   background-color: #2196f3;
   padding: 12px;
   border-radius: 5px;
-  font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #fff;
@@ -176,4 +175,16 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.aboutContainer__infoIcon {
+  width: 30px;
+}
+
+.aboutInfoImage {
+  width:40px;
+}
+
+.aboutText {
+  line-height: 1.5;
 }

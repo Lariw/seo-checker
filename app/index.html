@@ -22,6 +22,10 @@
   <script defer src="./tests/lighthouse.js"></script>
   <script defer src="./tests/main.js"></script>
   <script defer src="./tests/axe.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -83,16 +87,19 @@
     <section class="lighthouse section">
       <div class="formContainer">
         <div class="inputsContainer">
-          <input class="fileName__input input-lighthouse" placeholder="filename" id="lighthouse__testName" type="text" />
+          <input class="fileName__input input-lighthouse" placeholder="filename" id="lighthouse__testName"
+            type="text" />
 
-          <label class="checkboxContainer">Performance<input class="lighthouse__input" name="performance" checked type="checkbox" /><span
+          <label class="checkboxContainer">Performance<input class="lighthouse__input" name="performance" checked
+              type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">Accessbility<input class="lighthouse__input" name="accessibility" checked
+              type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">SEO<input class="lighthouse__input" name="seo" type="checkbox" /><span
               class="checkmark"></span></label>
-          <label class="checkboxContainer">Accessbility<input class="lighthouse__input" name="accessibility" checked type="checkbox" /><span
-              class="checkmark"></span></label>
-          <label class="checkboxContainer">SEO<input class="lighthouse__input" name="seo" type="checkbox" /><span class="checkmark"></span></label>
-          <label class="checkboxContainer">Best practices<input class="lighthouse__input" name="best-practices"  type="checkbox" /><span
-              class="checkmark"></span></label>
-          <label class="checkboxContainer">PWA<input class="lighthouse__input" name="pwa" checked type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">Best practices<input class="lighthouse__input" name="best-practices"
+              type="checkbox" /><span class="checkmark"></span></label>
+          <label class="checkboxContainer">PWA<input class="lighthouse__input" name="pwa" checked
+              type="checkbox" /><span class="checkmark"></span></label>
         </div>
 
         <div class="buttons">
@@ -101,16 +108,28 @@
       </div>
 
       <div class="aboutContainer">
+        <img class=aboutInfoImage src="./images/info.png" alt="Information image">
         <span class="aboutText">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          maxime soluta laudantium. Praesentium ratione, reprehenderit
-          dolor in, nostrum dolores maxime veritatis sint harum et ipsa
-          doloremque fugit nemo nobis aliquam. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Facilis accusamus voluptas libero
-          iste ea id fugit voluptatibus sequi, eius iure necessitatibus
-          voluptatum explicabo et, ipsum veritatis, esse sunt voluptatem.
-          Non.
+          Lighthouse to narzędzie służące do testowania i optymalizacji stron internetowych pod kątem wydajności,
+          dostępności, SEO i najlepszych praktyk. Pozwala analizować strony pod kątem ich szybkości, responsywności,
+          użyteczności na różnych urządzeniach, a także zgodności z zasadami dostępności dla osób z
+          niepełnosprawnościami.
+
+          <br><br>
+          Za pomocą Lighthouse możemy:
+
+          <ul>
+            <li>Testować wydajność strony, np. czas ładowania, renderowanie, wykorzystanie zasobów.</li>
+            <li>Ocenić dostępność dla różnych grup użytkowników, w tym osób z ograniczeniami wzrokowymi lub ruchowymi.
+            </li>
+            <li>Analizować SEO, czyli optymalizację pod kątem wyszukiwarek internetowych.</li>
+            <li>Sprawdzić zgodność z najlepszymi praktykami, np. bezpieczeństwo (HTTPS, brak niebezpiecznych skryptów).
+            </li>
+          </ul>
+
         </span>
+
+
       </div>
     </section>
 
@@ -122,19 +141,25 @@
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
               <h2>WCAG 2</h2>
-              <label class="checkboxContainer">Level A<input class="axe-input" name="wcag2a" type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag2aa" checked type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Level AAA<input class="axe-input" name="wcag2aaa" type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level A<input class="axe-input" name="wcag2a" type="checkbox" /><span
+                  class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag2aa" checked
+                  type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AAA<input class="axe-input" name="wcag2aaa" type="checkbox" /><span
+                  class="checkmark"></span></label>
             </div>
             <div class="inputsColumnsContainer">
               <h2>WCAG 2.1</h2>
-              <label class="checkboxContainer">Level A<input class="axe-input" name="wcag21a" type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag21aa" checked type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level A<input class="axe-input" name="wcag21a" type="checkbox" /><span
+                  class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag21aa" checked
+                  type="checkbox" /><span class="checkmark"></span></label>
             </div>
 
             <div class="inputsColumnsContainer">
               <h2>WCAG 2.2</h2>
-              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag22aa" checked type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag22aa" checked
+                  type="checkbox" /><span class="checkmark"></span></label>
             </div>
           </div>
         </div>
@@ -144,9 +169,28 @@
       </div>
 
       <div class="aboutContainer">
-        <span class="aboutText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, maxime eveniet. Porro,
-          unde dolorem nisi debitis quia, ut fugiat nam sapiente itaque labore veritatis sint recusandae dolores ipsa
-          repellendus inventore.</span>
+        <img class=aboutInfoImage src="./images/info.png" alt="Information image">
+        <span class="aboutText">
+
+          Axe to narzędzie do automatycznego testowania dostępności stron internetowych, które pomaga programistom i
+          testerom wykrywać problemy związane z dostępnością na wczesnym etapie rozwoju aplikacji. Jest to jedno z
+          najpopularniejszych narzędzi do analizy zgodności z wytycznymi WCAG (Web Content Accessibility Guidelines).
+
+
+
+          <ul>
+            <li>Integracje: Axe działa jako rozszerzenie przeglądarek (Chrome, Firefox) lub biblioteka dla narzędzi
+              takich jak Selenium czy Puppeteer.</li>
+            <li>Automatyzacja testów: Umożliwia przeprowadzanie automatycznych testów dostępności, integrując się z
+              pipeline CI/CD, dzięki czemu błędy są wykrywane zanim trafią na produkcję.</li>
+            <li>Łatwość użycia: Po wykonaniu analizy Axe dostarcza szczegółowe raporty z opisami problemów i
+              sugerowanymi rozwiązaniami.</li>
+          </ul>
+
+
+
+
+        </span>
       </div>
     </section>
 
@@ -158,10 +202,12 @@
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
               <label class="checkboxContainer">Fonts<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Images<input checked type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Images<input checked type="checkbox" /><span
+                  class="checkmark"></span></label>
               <label class="checkboxContainer">Console logs<input type="checkbox" /><span
                   class="checkmark"></span></label>
-              <label class="checkboxContainer">Links<input checked type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Links<input checked type="checkbox" /><span
+                  class="checkmark"></span></label>
               <label class="checkboxContainer">Screenshot<input checked type="checkbox" /><span
                   class="checkmark"></span></label>
             </div>
@@ -180,9 +226,23 @@
       </div>
 
       <div class="aboutContainer">
-        <span class="aboutText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio adipisci quisquam
-          doloribus in saepe debitis eveniet quidem obcaecati illo! Quas minus fugit laborum a nulla provident unde
-          nesciunt omnis eaque!</span>
+        <img class=aboutInfoImage src="./images/info.png" alt="Information image">
+        <span class="aboutText">
+          Skrypt stworzony w celu automatyzacji testów jakości stron, który skupia się na kilku kluczowych aspektach,
+          takich jak spójność wizualna, poprawność kodu oraz optymalizacja SEO. Dzięki szerokiemu zakresowi funkcji
+          narzędzie to wspiera programistów, testerów i specjalistów SEO w poprawie jakości stron internetowych.
+
+          <br><br>
+
+          <ul>
+            <li>Narzędzie automatycznie analizuje czcionki użyte na stronie, sprawdzając ich rodzaje, rozmiary oraz styl.</li>
+            <li>Analiza obrazów</li>
+            <li>Lista komunikatów z console log</li>
+            <li>Testowanie linków i statusów odpowiedzi</li>
+            <li>Screenshot całej strony</li>
+            <li>Kontrola SEO tagów</li>
+          </ul>
+        </span>
       </div>
     </section>
 
@@ -224,9 +284,7 @@
       <button class="modal__button js-closeModalBtn">X</button>
     </div>
 
-    <div class="modal__content">
-      <h1>modal</h1>
-    </div>
+
   </div>
 </body>
 

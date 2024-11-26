@@ -13,42 +13,51 @@
     "seo",
     "lighthouse"
   ],
-  "build": {
-    "icon": "assets\\icon_256.ico",
-    "productName": "Seo-checker",
-    "win": {
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "app/**/*"
+"build": {
+  "icon": "assets/icon_256.ico",
+  "productName": "Seo-checker",
+  "mac": {
+    "category": "public.app-category.developer-tools",
+    "target": [
+      "dmg",
+      "zip"
     ],
-    "extraResources": [
-      {
-        "from": "browsers-win",
-        "to": "browsers",
-        "filter": [
-          "**/*"
-        ]
-      }
-    ]
+    "icon": "assets/icon_256.icns"
   },
+  "win": {
+    "target": "nsis"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "app/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "browsers-win",
+      "to": "browsers",
+      "filter": [
+        "**/*"
+      ]
+    }
+  ]
+},
   "author": "Lariw",
   "license": "ISC",
   "dependencies": {
     "@axe-core/puppeteer": "^4.8.5",
     "axe-html-reporter": "^2.2.3",
     "lighthouse": "^9.3.1",
+    "nodemon": "^3.1.7",
     "puppeteer": "^23.7.1"
   },
   "devDependencies": {
-    "electron": "^27.0.3",
-    "electron-builder": "^24.6.4"
+    "electron": "^27.3.11",
+    "electron-builder": "^24.13.3"
   }
 }
