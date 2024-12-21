@@ -23,6 +23,7 @@
   <script defer src="./tests/lighthouse.js"></script>
   <script defer src="./tests/main.js"></script>
   <script defer src="./tests/axe.js"></script>
+  <script defer src="./tests/spider.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -198,23 +199,23 @@
     <section class="crawler section">
       <div class="formContainer">
         <div class="inputsContainer">
-          <input placeholder="filename" class="fileName__input" type="text" />
+          <input placeholder="filename" class="fileName__input js-FileNameSpider" type="text" />
 
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
-              <label class="checkboxContainer">Fonts<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">Images<input checked type="checkbox" /><span
+              <label class="checkboxContainer">Fonts<input class="jsFonts" type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">Images<input class="jsImages" checked type="checkbox" /><span
                   class="checkmark"></span></label>
-              <label class="checkboxContainer">Console logs<input type="checkbox" /><span
+              <label class="checkboxContainer">Console logs<input class="jsLogs" type="checkbox" /><span
                   class="checkmark"></span></label>
-              <label class="checkboxContainer">Links<input checked type="checkbox" /><span
+              <label class="checkboxContainer">Links<input class="jsLinks" checked type="checkbox" /><span
                   class="checkmark"></span></label>
-              <label class="checkboxContainer">Screenshot<input checked type="checkbox" /><span
+              <label class="checkboxContainer">Screenshot<input class="jsScreenshot" checked type="checkbox" /><span
                   class="checkmark"></span></label>
             </div>
             <div class="inputsColumnsContainer">
-              <label class="checkboxContainer">SEO tags<input type="checkbox" /><span class="checkmark"></span></label>
-              <label class="checkboxContainer">H-tags<input type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">SEO tags<input class="jsSeo" type="checkbox" /><span class="checkmark"></span></label>
+              <label class="checkboxContainer">H-tags<input class="jsHtags" type="checkbox" /><span class="checkmark"></span></label>
             </div>
           </div>
 
@@ -222,7 +223,7 @@
         </div>
 
         <div class="buttons">
-          <button name="spider" class="button">Check</button>
+          <button name="spider" class="button js-crawlerStartBtn">Check</button>
         </div>
       </div>
 
@@ -281,15 +282,15 @@
     </section>
   </main>
 
-  <div class="windowPopup">
+  <!-- <div class="windowPopup">
     <div class="windowPopup-header">
         <img class="warningIcon" src="./images/warning-icon.webp" alt="Warning icon">
         <i class="fa-solid fa-xmark navigationBar__icons" aria-hidden="true"></i>
     </div>
     <div class="windowPopup-content">
-        <!-- Treść popupu -->
+        
     </div>
-</div>
+</div> -->
 
 </body>
 

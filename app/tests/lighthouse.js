@@ -38,7 +38,7 @@ const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
   let index = 0;
 
   for (const url of getUrls()) {
-    const browser = await puppeteer.launch({
+      const browser = await puppeteer.launch({
       headless: getHeadless(),
     });
 
