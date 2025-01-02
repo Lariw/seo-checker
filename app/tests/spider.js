@@ -1,4 +1,3 @@
-
 const crawlerStartBtn = document.querySelector('.js-crawlerStartBtn');
 crawlerStartBtn.addEventListener('click', async () => {
   const options = {
@@ -15,11 +14,16 @@ crawlerStartBtn.addEventListener('click', async () => {
   await spider(options);
 });
 
-
-
 const spider = async (options) => {
   const urls = getUrls();
-  console.log(options);
+  const allResults = {
+    headings: [],
+    seoTags: [],
+    consoleLogs: [],
+    images: [],
+    links: [],
+    fonts: [],
+  };
 
   for (const url of urls) {
     const browser = await puppeteer.launch({
@@ -35,38 +39,70 @@ const spider = async (options) => {
     createFolderIfNotExists(reportPath);
 
     if (options.hTag) {
-      await crawlAndSaveHeadings(page, `${reportPath}/headings_structure.csv`);
+      const headings = await crawlHeadings(page, url);
+      allResults.headings.push(...headings);
     }
 
     if (options.seoTag) {
-      const seoTagsData = await crawlSeoTags(page);
-      saveSeoTagsToCsv(seoTagsData, `${reportPath}/seo-tags.csv`);
+      const seoTags = await crawlSeoTags(page, url);
+      allResults.seoTags.push(...seoTags);
     }
 
     if (options.log) {
-      await listenConsoleLogs(page, `${reportPath}/console-logs.csv`)
+      const logs = await crawlConsoleLogs(page, url);
+      fs.writeFileSync(reportPath + "/console-logs.csv",logs,'UTF-8');
     }
 
     if (options.image) {
-      const images = await crawlImages(page);
-      await saveToExcel(images, `${reportPath}/images.csv`);
+      const images = await crawlImages(page, url);
+      allResults.images.push(...images);
     }
 
     if (options.link) {
-      const links = await crawlLinks(page);
-      await saveToExcel(links, `${reportPath}/links.csv`);
+      const links = await crawlLinks(page, url);
+      allResults.links.push(...links);
     }
 
     if (options.font) {
-      const fonts = await crawlFonts(page);
-      await saveToExcel(fonts, `${reportPath}/fonts.csv`);
+      const fonts = await crawlFonts(page, url);
+      allResults.fonts.push(...fonts);
     }
 
     if (options.screenshot) {
-      await takeScreenshots(page, `${reportPath}/${parseURL(url)}`, url);
+      await takeScreenshots(page, `${reportPath}/screenshots/${parseURL(url)}`, url);
     }
 
     await browser.close();
+  }
+
+  saveResultsToCsv(allResults, options.titleDocument);
+};
+
+const saveResultsToCsv = (results, titleDocument) => {
+  const reportPath = `Spider - Reports/${titleDocument}`;
+
+  if (results.headings.length) {
+    saveToCsv(results.headings, `${reportPath}/headings_structure.csv`, ["Source", "H-Tag", "Text"]);
+  }
+
+  if (results.seoTags.length) {
+    saveToCsv(results.seoTags, `${reportPath}/seo-tags.csv`, ["Source", "Title", "Meta Description", "Meta Keywords", "Canonical Link", "Open Graph Title", "Open Graph Description"]);
+  }
+
+  if (results.consoleLogs.length) {
+    saveToCsv(results.consoleLogs, `${reportPath}/console-logs.csv`, ["Source", "Type", "Message"]);
+  }
+
+  if (results.images.length) {
+    saveToCsv(results.images, `${reportPath}/images.csv`, ["Source", "Src", "Alt", "Width", "Height"]);
+  }
+
+  if (results.links.length) {
+    saveToCsv(results.links, `${reportPath}/links.csv`, ["Source", "Href", "Text"]);
+  }
+
+  if (results.fonts.length) {
+    saveToCsv(results.fonts, `${reportPath}/fonts.csv`, ["Source", "Element", "Font Family", "Font Size", "Font Weight", "Color"]);
   }
 };
 
@@ -86,55 +122,44 @@ const createFolderIfNotExists = (folderPath) => {
   try {
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath, { recursive: true });
-      console.log(`Folder created: ${folderPath}`);
+    }
+    
+    const screenshotsPath = path.join(folderPath, "screenshots");
+    if (!fs.existsSync(screenshotsPath)) {
+      fs.mkdirSync(screenshotsPath);
     }
   } catch (err) {
     console.error(`Error creating folder: ${err.message}`);
   }
 };
 
-const crawlAndSaveHeadings = async (page, outputPath) => {
-  const headingsData = await page.evaluate(() => {
-    const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"))
-      .map((heading) => ({
-        level: `H${heading.tagName.substring(1)}`,
-        text: heading.innerText.replace(/\s+/g, " ").trim(),
-      }));
+const saveToCsv = (data, filePath, headers) => {
+  const folderPath = path.dirname(filePath);
+  createFolderIfNotExists(folderPath);
 
-    let correctStructure = true;
-    let previousLevel = 0;
-
-    for (const heading of headings) {
-      const currentLevel = parseInt(heading.level.substring(1));
-      if (previousLevel && currentLevel > previousLevel + 1) {
-        correctStructure = false;
-        break;
-      }
-      previousLevel = currentLevel;
-    }
-
-    return { headings, correctStructure };
-  });
-
-  const { headings, correctStructure } = headingsData;
-
-  const csvHeaders = "Level,Text\n";
-  const csvRows = headings
-    .map((heading) => `${heading.level},"${heading.text}"`)
+  const csvContent = [headers.join(",")]
+    .concat(
+      data.map((row) => headers.map((header) => row[header.toLowerCase()] || "Brak").join(","))
+    )
     .join("\n");
 
-  const structureRow = `Structure,"${correctStructure ? "Correct" : "Incorrect"}"`;
-  const csvContent = csvHeaders + csvRows + "\n" + structureRow;
-
-  try {
-    fs.writeFileSync(outputPath, csvContent, "utf-8");
-  } catch (err) {
-    console.error("Error saving headings to CSV:", err);
-  }
+  fs.writeFileSync(filePath, csvContent, "utf-8");
 };
 
-const crawlSeoTags = async (page) => {
-  return await page.evaluate(() => {
+const crawlHeadings = async (page, source) => {
+  return await page.evaluate((source) => {
+    const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"))
+      .map((heading) => ({
+        source,
+        "h-tag": heading.tagName,
+        text: heading.innerText.replace(/\s+/g, " ").replaceAll(",","").replaceAll(";","").trim(),
+      }));
+    return headings;
+  }, source);
+};
+
+const crawlSeoTags = async (page, source) => {
+  return await page.evaluate((source) => {
     const title = document.title || "Brak";
     const metaDescription = document.querySelector("meta[name='description']")?.content || "Brak";
     const metaKeywords = document.querySelector("meta[name='keywords']")?.content || "Brak";
@@ -143,61 +168,71 @@ const crawlSeoTags = async (page) => {
     const ogDescription = document.querySelector("meta[property='og:description']")?.content || "Brak";
 
     return [
-      { tag: "Title", content: title },
-      { tag: "Meta Description", content: metaDescription },
-      { tag: "Meta Keywords", content: metaKeywords },
-      { tag: "Canonical Link", content: canonicalLink },
-      { tag: "Open Graph Title", content: ogTitle },
-      { tag: "Open Graph Description", content: ogDescription },
+      { source, title, "meta description": metaDescription, "meta keywords": metaKeywords, "canonical link": canonicalLink, "open graph title": ogTitle, "open graph description": ogDescription }
     ];
-  });
+  }, source);
 };
 
-const saveSeoTagsToCsv = (seoTagsData, outputPath) => {
-  const folderPath = path.dirname(outputPath);
-  createFolderIfNotExists(folderPath);
+let allLogs = `SOURCE,MSG TYPE,MSG TEXT \n`;
 
-  const csvHeaders = "Tag,Content\n";
-  const csvRows = seoTagsData
-    .map((tag) => `${tag.tag},"${tag.content.replace(/\s+/g, " ").trim()}"`)
-    .join("\n");
+const crawlConsoleLogs = async (page, source) => {
 
-  const csvContent = csvHeaders + csvRows;
 
-  try {
-    fs.writeFileSync(outputPath, csvContent, "utf-8");
-  } catch (err) {
-    console.error("Error saving SEO tags to CSV:", err);
-  }
-};
-
-const listenConsoleLogs = async (page, outputPath) => {
-  const logs = [];
   page.on("console", (msg) => {
-    logs.push({ type: msg.type(), message: msg.text() });
-    console.log(`[Console ${msg.type()}]: ${msg.text()}`);
+    allLogs += `${source},${msg.type()},${msg.text().trim().replace(/\s+/g, " ")}\n`;
   });
+  return allLogs;
+};
 
-  const saveLogsToCsv = () => {
-    const folderPath = path.dirname(outputPath);
-    createFolderIfNotExists(folderPath);
 
-    const csvHeaders = "Type,Message\n";
-    const csvRows = logs
-      .map((log) => `${log.type},"${log.message.replace(/\s+/g, " ").trim()}"`)
-      .join("\n");
+const crawlImages = async (page, source) => {
+  return await page.evaluate((source) => {
+    return Array.from(document.querySelectorAll("img")).map((img) => ({
+      source,
+      src: img.src.replaceAll(";",":") || "Brak",
+      alt: img.alt || "Brak",
+      width: img.width || "Brak",
+      height: img.height || "Brak",
+    }));
+  }, source);
+};
 
-    const csvContent = csvHeaders + csvRows;
+const crawlLinks = async (page, source) => {
+  return await page.evaluate((source) => {
+    return Array.from(document.querySelectorAll("a[href]")).map((link) => ({
+      source,
+      href: link.href,
+      text: link.innerText.trim().replaceAll(";",":").replace(/\s+/g, " ") || "Brak",
+    }));
+  }, source);
+};
 
-    try {
-      fs.writeFileSync(outputPath, csvContent, "utf-8");
-      console.log(`Console logs saved to ${outputPath}`);
-    } catch (err) {
-      console.error("Error saving console logs to CSV:", err);
-    }
-  };
+const crawlFonts = async (page, source) => {
+  return await page.evaluate((source) => {
+    const elements = Array.from(document.querySelectorAll("*"));
+    const fontData = [];
 
-  page.on("close", saveLogsToCsv);
+    elements.forEach((el) => {
+      const computedStyle = window.getComputedStyle(el);
+      fontData.push({
+        source,
+        element: el.tagName,
+        "font family": computedStyle.fontFamily.replaceAll(","," ") || "Brak",
+        "font size": computedStyle.fontSize || "Brak",
+        "font weight": computedStyle.fontWeight || "Brak",
+        "color": computedStyle.color.replaceAll(",","'") || "Brak",
+      });
+    });
+
+    return fontData;
+  }, source);
+};
+
+const rgbToHex = (rgb) => {
+  const result = rgb.match(/\d+/g);
+  if (!result || result.length < 3) return "Brak";
+  const [r, g, b] = result.map(Number);
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 };
 
 const takeScreenshots = async (page, path, url) => {
@@ -209,76 +244,14 @@ const takeScreenshots = async (page, path, url) => {
 
   for (const resolution of resolutions) {
     try {
-      console.log(`Taking screenshot for ${resolution.name} (${resolution.width}x${resolution.height})`);
       await page.setViewport({ width: resolution.width, height: resolution.height });
-
       await page.goto(url, { waitUntil: "networkidle2" });
       await page.screenshot({
         path: `${path}-${resolution.name}.png`,
         fullPage: true,
       });
-
-      console.log(`Screenshot saved: ${path}-${resolution.name}.png`);
     } catch (err) {
       console.error(`Error taking screenshot for ${resolution.name}:`, err.message);
     }
   }
-};
-
-
-const crawlLinks = async (page) => {
-  return await page.evaluate(() => {
-    return Array.from(document.querySelectorAll("a[href]")).map((link) => ({
-      href: link.href,
-      text: link.innerText.trim() || "Brak",
-    }));
-  });
-};
-
-const crawlImages = async (page) => {
-  return await page.evaluate(() => {
-    return Array.from(document.querySelectorAll("img")).map((img) => ({
-      src: img.src || "Brak",
-      alt: img.alt || "Brak",
-      width: img.width || "Brak",
-      height: img.height || "Brak",
-    }));
-  });
-};
-
-const crawlFonts = async (page) => {
-  return await page.evaluate(() => {
-    const elements = Array.from(document.querySelectorAll("*"));
-    const fontData = [];
-
-    elements.forEach((el) => {
-      const computedStyle = window.getComputedStyle(el);
-      fontData.push({
-        element: el.tagName,
-        fontFamily: computedStyle.fontFamily || "Brak",
-        fontSize: computedStyle.fontSize || "Brak",
-        fontWeight: computedStyle.fontWeight || "Brak",
-        color: computedStyle.color || "Brak",
-      });
-    });
-
-    return fontData;
-  });
-};
-
-const saveToExcel = async (data, outputPath) => {
-  const workbook = new ExcelJS.Workbook();
-  const sheet = workbook.addWorksheet("Data");
-
-  if (data.length > 0) {
-    const keys = Object.keys(data[0]);
-    sheet.columns = keys.map((key) => ({ header: key, key, width: 30 }));
-    sheet.addRows(data);
-  }
-
-  const folderPath = path.dirname(outputPath);
-  createFolderIfNotExists(folderPath);
-
-  await workbook.xlsx.writeFile(outputPath);
-  console.log(`Data saved to ${outputPath}`);
 };

@@ -1,6 +1,6 @@
 {
   "name": "seo-checker",
-  "version": "1.1.1",
+  "version": "2.0",
   "description": "Testing tools",
   "main": "app/electron.js",
   "scripts": {
@@ -53,6 +53,7 @@
   "dependencies": {
     "@axe-core/puppeteer": "^4.8.5",
     "axe-html-reporter": "^2.2.3",
+    "exceljs": "^4.4.0",
     "lighthouse": "^9.3.1",
     "nodemon": "^3.1.7",
     "puppeteer": "^23.7.1"
