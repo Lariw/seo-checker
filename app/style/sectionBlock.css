@@ -1,5 +1,3 @@
-
-
 .section__heading {
   text-align: center;
   letter-spacing: 0.34em;
@@ -8,12 +6,15 @@
 .js-section-1 {
   display: block;
 }
+
 .js-section-2 {
   display: none;
 }
+
 .js-section-3 {
   display: none;
 }
+
 .js-section-4 {
   display: none;
 }

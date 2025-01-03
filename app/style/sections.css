@@ -120,7 +120,7 @@
 .section {
   display: flex;
   gap: 20px;
-  height: calc(100vh - 134px);
+  height: calc(100vh - 234px);
 }
 
 .formContainer {
@@ -222,7 +222,8 @@
 
 .settingsList {
   list-style: none;
-  width: 100%;
+  width: 80%;
+  padding-left: 50px;
 }
 
 .settingsListItem {
@@ -234,7 +235,7 @@
 
 .settingsTitle {
   font-size: 19px;
-  width: 120px;
+  width: 220px;
 }
 
 .textarea {
@@ -302,4 +303,15 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+.aboutcontainer_lightbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background-color: #213749c0;
+  border-radius: 15px;
 }

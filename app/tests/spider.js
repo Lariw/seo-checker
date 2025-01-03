@@ -25,6 +25,8 @@ const spider = async (options) => {
     fonts: [],
   };
 
+  let index = 0;
+
   for (const url of urls) {
     const browser = await puppeteer.launch({
       headless: getHeadless(),
@@ -50,7 +52,7 @@ const spider = async (options) => {
 
     if (options.log) {
       const logs = await crawlConsoleLogs(page, url);
-      fs.writeFileSync(reportPath + "/console-logs.csv",logs,'UTF-8');
+      fs.writeFileSync(reportPath + "/console-logs.csv", logs, 'UTF-8');
     }
 
     if (options.image) {
@@ -71,6 +73,14 @@ const spider = async (options) => {
     if (options.screenshot) {
       await takeScreenshots(page, `${reportPath}/screenshots/${parseURL(url)}`, url);
     }
+
+    index++;
+
+    let changeStatusBar = (index / urls.length) * 100;
+    changeStatusBar = changeStatusBar.toFixed(0);
+
+    const statusBarValue = document.querySelector('.js-statusBar__spider--value').innerText = changeStatusBar + "%";
+    const barWidth = document.querySelector(".js-statusBar__spider").style.width = changeStatusBar + "%";
 
     await browser.close();
   }
@@ -123,7 +133,7 @@ const createFolderIfNotExists = (folderPath) => {
     if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath, { recursive: true });
     }
-    
+
     const screenshotsPath = path.join(folderPath, "screenshots");
     if (!fs.existsSync(screenshotsPath)) {
       fs.mkdirSync(screenshotsPath);
@@ -152,7 +162,7 @@ const crawlHeadings = async (page, source) => {
       .map((heading) => ({
         source,
         "h-tag": heading.tagName,
-        text: heading.innerText.replace(/\s+/g, " ").replaceAll(",","").replaceAll(";","").trim(),
+        text: heading.innerText.replace(/\s+/g, " ").replaceAll(",", "").replaceAll(";", "").trim(),
       }));
     return headings;
   }, source);
@@ -189,7 +199,7 @@ const crawlImages = async (page, source) => {
   return await page.evaluate((source) => {
     return Array.from(document.querySelectorAll("img")).map((img) => ({
       source,
-      src: img.src.replaceAll(";",":") || "Brak",
+      src: img.src.replaceAll(";", ":") || "Brak",
       alt: img.alt || "Brak",
       width: img.width || "Brak",
       height: img.height || "Brak",
@@ -202,7 +212,7 @@ const crawlLinks = async (page, source) => {
     return Array.from(document.querySelectorAll("a[href]")).map((link) => ({
       source,
       href: link.href,
-      text: link.innerText.trim().replaceAll(";",":").replace(/\s+/g, " ") || "Brak",
+      text: link.innerText.trim().replaceAll(";", ":").replace(/\s+/g, " ") || "Brak",
     }));
   }, source);
 };
@@ -217,10 +227,10 @@ const crawlFonts = async (page, source) => {
       fontData.push({
         source,
         element: el.tagName,
-        "font family": computedStyle.fontFamily.replaceAll(","," ") || "Brak",
+        "font family": computedStyle.fontFamily.replaceAll(",", " ") || "Brak",
         "font size": computedStyle.fontSize || "Brak",
         "font weight": computedStyle.fontWeight || "Brak",
-        "color": computedStyle.color.replaceAll(",","'") || "Brak",
+        "color": computedStyle.color.replaceAll(",", "'") || "Brak",
       });
     });
 

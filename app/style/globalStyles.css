@@ -30,11 +30,11 @@
   border-radius: 50%;
 }
 
-.checkboxContainer:hover input ~ .checkmark {
+.checkboxContainer:hover input~.checkmark {
   background-color: #ccc;
 }
 
-.checkboxContainer input:checked ~ .checkmark {
+.checkboxContainer input:checked~.checkmark {
   background-color: #2196f3;
 }
 
@@ -44,7 +44,7 @@
   display: none;
 }
 
-.checkboxContainer input:checked ~ .checkmark:after {
+.checkboxContainer input:checked~.checkmark:after {
   display: block;
 }
 
@@ -68,6 +68,7 @@
   border-radius: 50%;
   background: white;
 }
+
 .inputContainer input {
   border: none;
   width: 200px;
@@ -95,6 +96,7 @@
 .startTestingButton:hover {
   background-color: #51abf6;
 }
+
 .startTestingButton:active {
   background-color: #81c3f8;
 }
@@ -115,8 +117,6 @@
   margin-bottom: 15px;
   width: 100%;
 }
-
-/* switch btn styles */
 
 .switch {
   position: relative;
@@ -155,15 +155,15 @@
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196f3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -182,7 +182,8 @@ input:checked + .slider:before {
 }
 
 .aboutInfoImage {
-  width:40px;
+  width: 40px;
+  margin: 0 auto;
 }
 
 .aboutText {

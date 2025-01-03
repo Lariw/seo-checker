@@ -19,32 +19,46 @@ lighthouseStartBtn.addEventListener('click', () => {
     .filter(input => input.checked)
     .map(input => input.getAttribute('name'));
 
-    try{
-      lighthouseCrawler(lighthouseFileName, checkedOptions)
+  try {
+    lighthouseCrawler(lighthouseFileName, checkedOptions)
       .then(() => {
         lighthouseStartBtn.innerHTML = 'Check';
         lighthouseStartBtn.classList.remove('btn-active');
       })
-    } catch(e){
-      console.log(e)
-      lighthouseStartBtn.innerHTML = 'Check';
-      lighthouseStartBtn.classList.remove('btn-active');
-    }
+  } catch (e) {
+    console.log(e)
+    lighthouseStartBtn.innerHTML = 'Check';
+    lighthouseStartBtn.classList.remove('btn-active');
+  }
 })
-
 
 const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
 
   let index = 0;
 
+  let lighthouseUrls = getUrls();
+
+
   for (const url of getUrls()) {
-      const browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({
       headless: getHeadless(),
     });
+
+
+
 
     const page = await browser.newPage();
 
     index++;
+
+    let changeStatusBar = (index / lighthouseUrls.length) * 100;
+    changeStatusBar = changeStatusBar.toFixed(0);
+
+    const statusBarValue = document.querySelector('.js-statusBar__lighthouse--value').innerText = changeStatusBar + "%";
+    const barWidth = document.querySelector(".js-statusBar__lighthouse").style.width = changeStatusBar + "%";
+
+
+
 
     await page.goto(url);
 

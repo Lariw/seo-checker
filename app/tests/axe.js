@@ -46,6 +46,10 @@ const createReportsFolder = (reportPath, fileName, reportHTML) => {
 
 const axeCrawling = async (reportPath, checkedOptions) => {
 
+    let index = 0;
+
+    let axeUrls = getUrls();
+
     for (const url of getUrls()) {
         const browser = await puppeteer.launch({
             headless: getHeadless(),
@@ -53,7 +57,15 @@ const axeCrawling = async (reportPath, checkedOptions) => {
 
         const page = await browser.newPage();
 
+        index++;
+
+        let changeStatusBar = (index / axeUrls.length) * 100;
+        changeStatusBar = changeStatusBar.toFixed(0);
+
         await page.goto(url);
+
+        const statusBarValue = document.querySelector('.js-statusBar__axe--value').innerText = changeStatusBar + "%";
+        const barWidth = document.querySelector(".js-statusBar__axe").style.width = changeStatusBar + "%";
 
         const prefixUrl = trimUrls(url);
 
