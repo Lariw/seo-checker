@@ -238,13 +238,6 @@ const crawlFonts = async (page, source) => {
   }, source);
 };
 
-const rgbToHex = (rgb) => {
-  const result = rgb.match(/\d+/g);
-  if (!result || result.length < 3) return "Brak";
-  const [r, g, b] = result.map(Number);
-  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-};
-
 const takeScreenshots = async (page, path, url) => {
   const resolutions = [
     { name: "mobile", width: 375, height: 812 },

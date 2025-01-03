@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seo-checker</title>
-
   <link rel="stylesheet" href="./style/navigationBar.css" />
   <link rel="stylesheet" href="./style/main.css" />
   <link rel="stylesheet" href="./style/sections.css" />
   <link rel="stylesheet" href="./style/sectionBlock.css" />
   <link rel="stylesheet" href="./style/globalStyles.css" />
   <link rel="stylesheet" href="./style/modal.css" />
-  <link rel="stylesheet" href="./style/windowPopup.css">
   <link rel="stylesheet" href="./style/loadingContainer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,9 +27,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
-
 </head>
-
 <body>
   <header>
     <div class="navigationBar">
@@ -42,47 +37,29 @@
       <div class="navigation__btns"> <button class="navigationBar__button js-minimizeButton">
           <i class="fa-solid fa-minus navigationBar__icons"></i>
         </button>
-
         <button class="navigationBar__button js-maximizeButton">
           <i class="fa-regular fa-window-maximize navigationBar__icons"></i>
         </button>
-
         <button class="navigationBar__button js-exitButton">
           <i class="fa-solid fa-xmark navigationBar__icons"></i>
         </button>
       </div>
     </div>
-
     <div class="navigationBtnsWrapper">
       <div class="navigationBtnContainer">
         <button class="sections_button js-lighthouseSectionButton sections__currentSection">
           <i class="fa-solid sections__buttonIcon fa-bolt"></i><span class="navigation__btnText">Lighthouse</span>
         </button>
-        <div class="lighthouse__progressBar">
-          <div class="loadingBar"></div>
-          <div class="progress-bar"></div>
-          <div class="progressBar__value">90%</div>
-        </div>
       </div>
       <div class="navigationBtnContainer">
         <button class="sections_button js-fireSectionButton">
           <i class="fa-solid fa-hammer sections__buttonIcon"></i><span class="navigation__btnText">Axe</span>
         </button>
-        <div class="axe__progressBar">
-          <div class="loadingBar"></div>
-          <div class="progress-bar"></div>
-          <div class="progressBar__value">90%</div>
-        </div>
       </div>
       <div class="navigationBtnContainer">
         <button class="sections_button js-spiderSectionButton">
           <i class="fa-solid sections__buttonIcon fa-spider"></i><span class="navigation__btnText">Spider</span>
         </button>
-        <div class="spider__progressBar">
-          <div class="loadingBar"></div>
-          <div class="progress-bar"></div>
-          <div class="progressBar__value">90%</div>
-        </div>
       </div>
       <div class="navigationBtnContainer">
         <button class="sections_button js-settingsSectionButton">
@@ -90,17 +67,9 @@
         </button>
       </div>
     </div>
-
-
-
-
   </header>
-
   <main>
-
     <div class="naviagtion__loadingContainer">
-
-
       <div class="naviagtion__loadingContainer--box">
         <div>Lighthouse</div>
         <span class="loadingValue__lighthouse js-statusBar__lighthouse--value">0%</span>
@@ -108,7 +77,6 @@
           <div class="navigation__statusBar js-statusBar__lighthouse"></div>
         </div>
       </div>
-
       <div class="naviagtion__loadingContainer--box">
         <div>Axe</div>
         <span class="loadingValue js-statusBar__axe--value">0%</span>
@@ -123,17 +91,12 @@
           <div class="navigation__statusBar js-statusBar__spider"></div>
         </div>
       </div>
-
-
     </div>
-
-
     <section class="lighthouse section">
       <div class="formContainer">
         <div class="inputsContainer">
           <input class="fileName__input input-lighthouse" placeholder="nazwa_folderu" id="lighthouse__testName"
             type="text" />
-
           <label class="checkboxContainer">Performance<input class="lighthouse__input" name="performance" checked
               type="checkbox" /><span class="checkmark"></span></label>
           <label class="checkboxContainer">Accessbility<input class="lighthouse__input" name="accessibility" checked
@@ -145,12 +108,10 @@
           <label class="checkboxContainer">PWA<input class="lighthouse__input" name="pwa" checked
               type="checkbox" /><span class="checkmark"></span></label>
         </div>
-
         <div class="buttons">
           <button name='lighthouse' class="button js-lighthouseStartBtn">Test</button>
         </div>
       </div>
-
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
           <img class=aboutInfoImage src="./images/info.png" alt="Information image">
@@ -159,10 +120,8 @@
             dostępności, SEO i najlepszych praktyk. Pozwala analizować strony pod kątem ich szybkości, responsywności,
             użyteczności na różnych urządzeniach, a także zgodności z zasadami dostępności dla osób z
             niepełnosprawnościami.
-
             <br><br>
             Za pomocą Lighthouse możemy:
-
             <ul>
               <li>✅ Testować wydajność strony, np. czas ładowania, renderowanie, wykorzystanie zasobów.</li>
               <li>✅ Ocenić dostępność dla różnych grup użytkowników, w tym osób z ograniczeniami wzrokowymi lub
@@ -173,19 +132,14 @@
                 skryptów).
               </li>
             </ul>
-
           </span>
         </div>
-
-
       </div>
     </section>
-
     <section class="axe section">
       <div class="formContainer">
         <div class="inputsContainer">
           <input placeholder="nazwa_folderu" class="fileName__input js-axeFilename" type="text" />
-
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
               <h2>WCAG 2</h2>
@@ -203,7 +157,6 @@
               <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag21aa" checked
                   type="checkbox" /><span class="checkmark"></span></label>
             </div>
-
             <div class="inputsColumnsContainer">
               <h2>WCAG 2.2</h2>
               <label class="checkboxContainer">Level AA<input class="axe-input" name="wcag22aa" checked
@@ -215,18 +168,12 @@
           <button name="axe" class="button js-axeStartBtn">Test</button>
         </div>
       </div>
-
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
           <img class=aboutInfoImage src="./images/info.png" alt="Information image">
-          <span class="aboutText">
-
-            Axe to narzędzie do automatycznego testowania dostępności stron internetowych, które pomaga programistom i
+          <span class="aboutText">Axe to narzędzie do automatycznego testowania dostępności stron internetowych, które pomaga programistom i
             testerom wykrywać problemy związane z dostępnością na wczesnym etapie rozwoju aplikacji. Jest to jedno z
             najpopularniejszych narzędzi do analizy zgodności z wytycznymi WCAG (Web Content Accessibility Guidelines).
-
-
-
             <ul>
               <li>✅ Integracje: Axe działa jako rozszerzenie przeglądarek (Chrome, Firefox) lub biblioteka dla narzędzi
                 takich jak Selenium czy Puppeteer.</li>
@@ -235,20 +182,14 @@
               <li>✅ Łatwość użycia: Po wykonaniu analizy Axe dostarcza szczegółowe raporty z opisami problemów i
                 sugerowanymi rozwiązaniami.</li>
             </ul>
-
-
-
-
           </span>
         </div>
       </div>
     </section>
-
     <section class="crawler section">
       <div class="formContainer">
         <div class="inputsContainer">
           <input placeholder="nazwa_folderu" class="fileName__input js-FileNameSpider" type="text" />
-
           <div class="inputs__columns">
             <div class="inputsColumnsContainer">
               <label class="checkboxContainer">Fonts<input class="jsFonts" type="checkbox" /><span
@@ -269,15 +210,11 @@
                   class="checkmark"></span></label>
             </div>
           </div>
-
-
         </div>
-
         <div class="buttons">
           <button name="spider" class="button js-crawlerStartBtn">Test</button>
         </div>
       </div>
-
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
           <img class=aboutInfoImage src="./images/info.png" alt="Information image">
@@ -285,9 +222,7 @@
             Skrypt stworzony w celu automatyzacji testów jakości stron, który skupia się na kilku kluczowych aspektach,
             takich jak spójność wizualna, poprawność kodu oraz optymalizacja SEO. Dzięki szerokiemu zakresowi funkcji
             narzędzie to wspiera programistów, testerów i specjalistów SEO w poprawie jakości stron internetowych.
-
             <br><br>
-
             <ul>
               <li>✅ Narzędzie automatycznie analizuje czcionki użyte na stronie, sprawdzając ich rodzaje, rozmiary oraz
                 styl.</li>
@@ -301,7 +236,6 @@
         </div>
       </div>
     </section>
-
     <section class="settings section">
       <div class="formContainer formContainer--settings">
         <ul class="settingsList">
@@ -318,7 +252,6 @@
               <input type="checkbox" class="js-authorizeSwitch" />
               <span class="slider round"></span>
             </label>
-
             <div class="autorizationInputContainer js-authContainer">
               <input class="fileName__input fileName__input--auth" placeholder="https://google.com/autorize"
                 type="text" />
@@ -338,17 +271,5 @@ https://onet.pl/
       </div>
     </section>
   </main>
-
-  <!-- <div class="windowPopup">
-    <div class="windowPopup-header">
-        <img class="warningIcon" src="./images/warning-icon.webp" alt="Warning icon">
-        <i class="fa-solid fa-xmark navigationBar__icons" aria-hidden="true"></i>
-    </div>
-    <div class="windowPopup-content">
-        
-    </div>
-</div> -->
-
 </body>
-
 </html>

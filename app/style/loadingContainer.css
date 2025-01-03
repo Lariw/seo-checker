@@ -23,10 +23,6 @@
     border-radius: 15px;
 }
 
-.loadingValue__lighthouse {
-    font-family: sans-serif;
-}
-
 .js-statusBar__lighthouse,
 .js-statusBar__axe,
 .js-statusBar__spider {

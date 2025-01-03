@@ -37,7 +37,6 @@
   width: 100%;
   height: 50px;
   color: #ccc;
-  font-family: "Pixelify Sans", sans-serif;
   border: none;
   background-color: #0d1821;
   cursor: pointer;
@@ -151,7 +150,6 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  font-family: "Pixelify Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   background-color: #2196f3;
@@ -217,11 +215,7 @@
   width: 100%;
   gap: 50px;
 }
-
-
-
 .settingsList {
-  list-style: none;
   width: 80%;
   padding-left: 50px;
 }
@@ -244,7 +238,6 @@
   border: none;
   outline: none;
   padding: 5px;
-  font-family: "Courier New", Courier, monospace;
   resize: none;
   background-color: hsl(207, 43%, 19%);
   color: #fff;
