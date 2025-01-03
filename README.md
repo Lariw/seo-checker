@@ -45,6 +45,15 @@ or download from [releases](https://github.com/Lariw/seo-checker/releases)
 ![image](https://github.com/user-attachments/assets/530edf66-adf6-4492-8073-117b06384bde)
 
 
+## Reports
+# Lighthouse
+![image](https://github.com/user-attachments/assets/e451630c-420b-4699-bdd3-4e9b71f05aab)
+
+# Axe
+![image](https://github.com/user-attachments/assets/54a5403c-7fd4-4634-ba74-05fd0f59578c)
+
+# Spider
+![image](https://github.com/user-attachments/assets/c84fe564-d1a4-495e-aa33-6dd298f4afd0)
 
 
 
