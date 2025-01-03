@@ -7,7 +7,14 @@ const getUrls = () => {
     let noTrimmedUrls = document.querySelector('#textarea__urls').value;
     let urlsList = noTrimmedUrls.split('\n').map(link => link.trim()).filter(link => link.startsWith("https://"));
     if (urlsList.length === 0) {
-        console.log('empty list, please add https:// to urls.')
+        let content = `
+                  <div class="popup_contentBox">
+            <img class="popup_xImage" src="./images/16083479.webp" alt="X icon">
+            <span>Sprawdź czy lista linków jest poprawnie zdefiniowana.</span>
+          </div>
+        `
+        showPopup(content);
+        console.log('empty list, please add https:// to urls.');
     }
 
     return urlsList;

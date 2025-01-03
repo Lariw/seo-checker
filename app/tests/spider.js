@@ -10,9 +10,27 @@ crawlerStartBtn.addEventListener('click', async () => {
     hTag: document.querySelector(".jsHtags").checked,
     titleDocument: document.querySelector(".js-FileNameSpider").value,
   };
-
+  const checkedOptions = [
+    options.font,
+    options.image,
+    options.log,
+    options.link,
+    options.screenshot,
+    options.seoTag,
+    options.hTag
+  ];
+  const isAnyOptionChecked = checkedOptions.some(option => option);
+  if (!isAnyOptionChecked) {
+    checkForms();
+    return 0;
+  }
+  if (!options.titleDocument) {
+    checkInputs();
+    return 0;
+  }
   await spider(options);
 });
+
 
 const spider = async (options) => {
   const urls = getUrls();

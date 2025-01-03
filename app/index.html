@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./style/globalStyles.css" />
   <link rel="stylesheet" href="./style/modal.css" />
   <link rel="stylesheet" href="./style/loadingContainer.css">
+  <link rel="stylesheet" href="./style/popupWindow.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
@@ -22,6 +23,8 @@
   <script defer src="./tests/main.js"></script>
   <script defer src="./tests/axe.js"></script>
   <script defer src="./tests/spider.js"></script>
+  <script defer src="./script/popupWindow.js"></script>
+  <script defer src="./script/checkForms.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -114,7 +117,7 @@
       </div>
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
-          <img class=aboutInfoImage src="./images/info.png" alt="Information image">
+          <img class=aboutInfoImage src="./images/info.webp" alt="Information image">
           <span class="aboutText">
             Lighthouse to narzędzie służące do testowania i optymalizacji stron internetowych pod kątem wydajności,
             dostępności, SEO i najlepszych praktyk. Pozwala analizować strony pod kątem ich szybkości, responsywności,
@@ -170,7 +173,7 @@
       </div>
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
-          <img class=aboutInfoImage src="./images/info.png" alt="Information image">
+          <img class=aboutInfoImage src="./images/info.webp" alt="Information image">
           <span class="aboutText">Axe to narzędzie do automatycznego testowania dostępności stron internetowych, które pomaga programistom i
             testerom wykrywać problemy związane z dostępnością na wczesnym etapie rozwoju aplikacji. Jest to jedno z
             najpopularniejszych narzędzi do analizy zgodności z wytycznymi WCAG (Web Content Accessibility Guidelines).
@@ -217,7 +220,7 @@
       </div>
       <div class="aboutContainer">
         <div class="aboutcontainer_lightbox">
-          <img class=aboutInfoImage src="./images/info.png" alt="Information image">
+          <img class=aboutInfoImage src="./images/info.webp" alt="Information image">
           <span class="aboutText">
             Skrypt stworzony w celu automatyzacji testów jakości stron, który skupia się na kilku kluczowych aspektach,
             takich jak spójność wizualna, poprawność kodu oraz optymalizacja SEO. Dzięki szerokiemu zakresowi funkcji
@@ -270,6 +273,21 @@ https://onet.pl/
         </ul>
       </div>
     </section>
+
+
+    <div id="popup-overlay" class="hidden">
+      <div id="popup">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <img src="./images/warning-icon.webp" alt="Warning" class="warning-icon" />
+        <div class="popup-content" id="popup-content">
+        </div>
+      </div>
+    </div>
+
+
+
+
+
   </main>
 </body>
 </html>

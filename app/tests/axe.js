@@ -2,19 +2,24 @@ const { AxePuppeteer } = require('@axe-core/puppeteer');
 const axeStartBtn = document.querySelector('.js-axeStartBtn');
 const { createHtmlReport } = require("axe-html-reporter");
 
-
-
 axeStartBtn.addEventListener('click', () => {
     const axeReportFilename = document.querySelector('.js-axeFilename').value;
     const reportPath = path.join(axeReportsFile, axeReportFilename);
-    axeStartBtn.innerHTML = 'In progress.. <div class="loadingCircle"></div>';
-    axeStartBtn.classList.add('btn-active');
     const axeInputs = document.querySelectorAll('.axe-input');
+
+    if (!document.querySelector(".js-axeFilename").value) {
+        checkInputs();
+        return 0;
+    }
 
     let checkedOptions = Array.from(axeInputs)
         .filter(input => input.checked)
         .map(input => input.getAttribute('name'));
 
+    if (checkedOptions.length == 0) {
+        checkForms();
+        return 0;
+    }
     try {
         axeCrawling(reportPath, checkedOptions)
             .then(() => {

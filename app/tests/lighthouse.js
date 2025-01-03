@@ -9,25 +9,41 @@ const saveFileName = "Lighthouse - Reports";
 
 lighthouseStartBtn.addEventListener('click', () => {
 
-  lighthouseStartBtn.innerHTML = 'In progress.. <div class="loadingCircle"></div>';
-  lighthouseStartBtn.classList.add('btn-active');
+
+
+
   const lighthouseFileName = document.querySelector('.input-lighthouse').value;
 
   let lighthouseOptions = document.querySelectorAll('.lighthouse__input');
+
 
   let checkedOptions = Array.from(lighthouseOptions)
     .filter(input => input.checked)
     .map(input => input.getAttribute('name'));
 
+
+    console.log(checkedOptions.length)
+
+    if(checkedOptions.length == 0){
+      checkForms();
+      return 0;
+    }
+
+
+    if(!document.querySelector(".input-lighthouse").value){
+      checkInputs();
+      return 0;
+    }
+
   try {
     lighthouseCrawler(lighthouseFileName, checkedOptions)
       .then(() => {
-        lighthouseStartBtn.innerHTML = 'Check';
+        lighthouseStartBtn.innerHTML = 'Test';
         lighthouseStartBtn.classList.remove('btn-active');
       })
   } catch (e) {
     console.log(e)
-    lighthouseStartBtn.innerHTML = 'Check';
+    lighthouseStartBtn.innerHTML = 'Test';
     lighthouseStartBtn.classList.remove('btn-active');
   }
 })
@@ -44,13 +60,9 @@ const lighthouseCrawler = async (lighthouseFileName, checkedOptions) => {
       headless: getHeadless(),
     });
 
-
-
-
     const page = await browser.newPage();
 
     index++;
-
     let changeStatusBar = (index / lighthouseUrls.length) * 100;
     changeStatusBar = changeStatusBar.toFixed(0);
 
