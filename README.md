@@ -53,7 +53,8 @@ or download from [releases](https://github.com/Lariw/seo-checker/releases)
 ![image](https://github.com/user-attachments/assets/54a5403c-7fd4-4634-ba74-05fd0f59578c)
 
 # Spider
-![image](https://github.com/user-attachments/assets/c84fe564-d1a4-495e-aa33-6dd298f4afd0)
+![image](https://github.com/user-attachments/assets/f2ef75ed-fe3c-451f-a5c6-c2958b813ad9)
+
 
 
 
