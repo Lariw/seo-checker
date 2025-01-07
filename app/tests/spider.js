@@ -52,6 +52,11 @@ const spider = async (options) => {
     });
 
     const page = await browser.newPage();
+
+    await page.setExtraHTTPHeaders({
+      "Accept-Charset": "utf-8"
+    });
+    
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto(url);
 
@@ -207,7 +212,7 @@ const crawlConsoleLogs = async (page, source) => {
 
 
   page.on("console", (msg) => {
-    allLogs += `${source},${msg.type()},${msg.text().trim().replace(/\s+/g, " ")}\n`;
+    allLogs += `${source},${msg.type()},${msg.text().trim().replace(/\s+/g, " ").replaceAll(",","")}\n`;
   });
   return allLogs;
 };
