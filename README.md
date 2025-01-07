@@ -1,7 +1,8 @@
 # Seo-checker :heavy_check_mark:
 Application offers comprehensive tests including Lighthouse metrics (Performance, Accessibility, SEO, Best Practices, PWA) with outputs available in both CSV and HTML formats. It also provides WCAG accessibility tests based on the AXE engine, with options to choose between WCAG 2 (A, AA, AAA), 2.1 (A, AA), and 2.2 (AA) compliance levels.
 
-![image](https://github.com/Lariw/seo-checker/assets/98982966/8f0894d5-b200-4a9e-b04c-cf619f47ef5c)
+![image](https://github.com/user-attachments/assets/0aaf696c-5b36-4624-82c0-d07e1ba05e49)
+
 
 
 ## Features
@@ -12,7 +13,8 @@ Application offers comprehensive tests including Lighthouse metrics (Performance
 - **URL Lists**: Ability to add lists of URLs for testing.
 - **Headless Mode**: Option to enable or disable headless mode for testing.
 
-![image](https://github.com/Lariw/seo-checker/assets/98982966/e5d95041-a95b-4960-80c3-7362f385db36)
+![image](https://github.com/user-attachments/assets/8566a96c-1534-4fbe-8c48-d39a081fe020)
+
 
 
 
@@ -29,11 +31,30 @@ To run the app locally, follow these steps:
 
 or download from [releases](https://github.com/Lariw/seo-checker/releases)
 
-![image](https://github.com/Lariw/seo-checker/assets/98982966/dbd36a99-b78c-4d1e-8c07-deb743290b76)
+![image](https://github.com/user-attachments/assets/6957f109-45b9-4ba2-b75a-5f203788a541)
+
 
 ## Usage
 - Navigate through the different sections of the app to perform tests according to your requirements.
 - Customize settings such as authentication, URL lists, and headless mode as needed.
+
+## More screens
+
+![image](https://github.com/user-attachments/assets/ab90d68d-75fd-4e45-a030-e89a8084b3e3)
+#
+![image](https://github.com/user-attachments/assets/530edf66-adf6-4492-8073-117b06384bde)
+
+
+## Reports
+# Lighthouse
+![image](https://github.com/user-attachments/assets/e451630c-420b-4699-bdd3-4e9b71f05aab)
+
+# Axe
+![image](https://github.com/user-attachments/assets/54a5403c-7fd4-4634-ba74-05fd0f59578c)
+
+# Spider
+![image](https://github.com/user-attachments/assets/f2ef75ed-fe3c-451f-a5c6-c2958b813ad9)
+
 
 
 
